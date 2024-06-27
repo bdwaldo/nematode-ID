@@ -1,7 +1,6 @@
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 
 import streamlit as st
-import tensorflow as tf
 
 #webpage text headers
 st.markdown('<h1 style="color:black;">Vgg 19 Image classification model</h1>', unsafe_allow_html=True)
