@@ -3,8 +3,6 @@
 import streamlit as st
 import tensorflow as tf
 
-from tensorflow import keras
-
 #webpage text headers
 st.markdown('<h1 style="color:black;">Vgg 19 Image classification model</h1>', unsafe_allow_html=True)
 st.markdown('<h2 style="color:gray;">The image classification model classifies nematodes into following categories:</h2>', unsafe_allow_html=True)
