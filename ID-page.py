@@ -14,8 +14,6 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import cv2
 
-
-
 #webpage text headers
 st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=True)
 st.markdown('<h2 style="color:gray;">The image classification model classifies nematodes into following categories:</h2>', unsafe_allow_html=True)
@@ -40,7 +38,7 @@ if upload is not None:
   input_shape = (224, 224, 3)
   #optim_1 = Adam(learning_rate=0.0001)
   n_classes=6
-  vgg_model = model(input_shape, n_classes, optim_1, fine_tune=2)
+  vgg_model = model(input_shape, n_classes, fine_tune=2)
   
   # prediction on model
   vgg_preds = vgg_model.predict(img)
