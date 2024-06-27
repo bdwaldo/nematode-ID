@@ -1,7 +1,9 @@
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 
 import streamlit as st
-import PIL
+import PIL 
+
+from PIL import Image
 
 #webpage text headers
 st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=True)
