@@ -8,4 +8,4 @@ st.header("Nematode Image Classification")
 
 st.markdown("Upload nematode image for identification")
 
-str.subheader("Developed by UMD and USDA researchers")
+str.caption('<h2 >"Developed by UMD and USDA researchers")
