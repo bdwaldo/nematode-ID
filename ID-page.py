@@ -1,16 +1,19 @@
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 
-
+#import streamlit as st
+#import numpy as np
+#import PIL 
+#import cv2
+#import tensorflow
 
 import streamlit as st
+from PIL import Image
 import numpy as np
-import PIL 
+import tensorflow as tf
+import matplotlib.pyplot as plt
 import cv2
-import tensorflow
 
 from PIL import Image
-#from tensorflow import keras
-#from keras.applications.resnet50 import preprocess_input
 
 #webpage text headers
 st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=True)
