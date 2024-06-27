@@ -6,11 +6,11 @@ import streamlit as st
 import numpy as np
 import PIL 
 import cv2
-import tensorflow
+#import tensorflow
 
 from PIL import Image
-from tensorflow import keras
-from keras.applications.resnet50 import preprocess_input
+#from tensorflow import keras
+#from keras.applications.resnet50 import preprocess_input
 
 #webpage text headers
 st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=True)
