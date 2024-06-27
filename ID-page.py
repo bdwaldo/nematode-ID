@@ -6,7 +6,6 @@ import streamlit as st
 import numpy as np
 import PIL 
 import cv2
-import tensorflow as tf
 
 from PIL import Image
 from tensorflow import keras
