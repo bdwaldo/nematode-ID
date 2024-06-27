@@ -34,7 +34,7 @@ if upload is not None:
   ############################
 #load weights of the trained model.
   input_shape = (224, 224, 3)
-  optim_1 = Adam(learning_rate=0.0001)
+  #optim_1 = Adam(learning_rate=0.0001)
   n_classes=6
   vgg_model = model(input_shape, n_classes, optim_1, fine_tune=2)
   
