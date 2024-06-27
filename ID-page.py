@@ -15,9 +15,13 @@ import matplotlib.pyplot as plt
 import cv2
 
 #webpage text headers
-st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=False)
-st.markdown('<h2 style="color:gray;">The image classification model classifies nematodes into following categories:</h2>', unsafe_allow_html=False)
-st.markdown('<h3 style="color:gray;"> Hoplolaimus,  Mesocriconema, Pratylenchus</h3>', unsafe_allow_html=False)
+#st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=False)
+#st.markdown('<h2 style="color:gray;">The image classification model classifies nematodes into following categories:</h2>', unsafe_allow_html=False)
+#st.markdown('<h3 style="color:gray;"> Hoplolaimus,  Mesocriconema, Pratylenchus</h3>', unsafe_allow_html=False)
+
+st.header("Nematode Image Classification")
+st.markdown("Upload nematode image for identification")
+st.caption("Developed by UMD and USDA researchers")
 
 #pre-processing image
 #adding text to web page to upload image
