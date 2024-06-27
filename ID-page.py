@@ -23,9 +23,10 @@ st.header("Plant-Parasitic Nematode Image Classification")
 st.markdown("Upload nematode image for identification")
 st.caption("Developed by UMD and USDA researchers")
 
+
 #pre-processing image
 #adding text to web page to upload image
-upload= st.file_uploader('Insert image for classification', type=['png','jpg'])
+upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 if upload is not None:
   im= Image.open(upload)
