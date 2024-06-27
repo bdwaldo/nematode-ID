@@ -5,6 +5,7 @@
 #import PIL 
 #import cv2
 #import tensorflow
+#from PIL import Image
 
 import streamlit as st
 from PIL import Image
@@ -13,7 +14,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import cv2
 
-from PIL import Image
+
 
 #webpage text headers
 st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=True)
