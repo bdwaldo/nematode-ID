@@ -5,7 +5,7 @@
 import streamlit as st
 import numpy as np
 import PIL 
-import opencv-python-headless
+import cv2
 
 from PIL import Image
 
