@@ -1,6 +1,7 @@
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 
 import streamlit as st
+import numpy as np
 import PIL 
 
 from PIL import Image
