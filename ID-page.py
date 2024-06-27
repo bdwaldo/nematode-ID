@@ -15,9 +15,9 @@ import matplotlib.pyplot as plt
 import cv2
 
 #webpage text headers
-st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=True)
-st.markdown('<h2 style="color:gray;">The image classification model classifies nematodes into following categories:</h2>', unsafe_allow_html=True)
-st.markdown('<h3 style="color:gray;"> Hoplolaimus,  Mesocriconema, Pratylenchus</h3>', unsafe_allow_html=True)
+st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=False)
+st.markdown('<h2 style="color:gray;">The image classification model classifies nematodes into following categories:</h2>', unsafe_allow_html=False)
+st.markdown('<h3 style="color:gray;"> Hoplolaimus,  Mesocriconema, Pratylenchus</h3>', unsafe_allow_html=False)
 
 #pre-processing image
 #adding text to web page to upload image
@@ -34,15 +34,5 @@ if upload is not None:
   c1.write(img.shape)
 
   ############################
-#load weights of the trained model.
-  input_shape = (224, 224, 3)
-  #optim_1 = Adam(learning_rate=0.0001)
-  n_classes=6
-  vgg_model = model(input_shape, n_classes, fine_tune=2)
-  
-  # prediction on model
-  vgg_preds = vgg_model.predict(img)
-  vgg_pred_classes = np.argmax(vgg_preds, axis=1)
-  c2.header('Output')
-  c2.subheader('Predicted class :')
-  c2.write(classes[vgg_pred_classes[0]] )
+model_path = 'nema_model.h5'
+model = tf.keras.models.load_model(model_path)
