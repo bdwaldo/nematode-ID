@@ -22,16 +22,10 @@ if upload is not None:
   c1.write(img.shape)
 
   ############################
-#load weights of the trained model.
-  input_shape = (224, 224, 3)
-  optim_1 = Adam(learning_rate=0.0001)
-  n_classes=3
-  vgg_model = model(input_shape, n_classes, optim_1, fine_tune=2)
-  vgg_model.load_weights('/content/drive/MyDrive/vgg/tune_model19.weights.best.hdf5')
-
-  # prediction on model
-  vgg_preds = vgg_model.predict(img)
-  vgg_pred_classes = np.argmax(vgg_preds, axis=1)
-  c2.header('Output')
-  c2.subheader('Predicted class :')
-  c2.write(classes[vgg_pred_classes[0]] )
+st.set_option('deprecation.showfileUploaderEncoding', False)
+@st.cache(allow_output_mutation=True)
+def load_model():
+    model=tf.keras.models.load_model('nema_model.h5')
+    return model
+with st.spinner('Model is being loaded..'):
+    model=load_model()
