@@ -38,4 +38,29 @@ if upload is not None:
   c1.image(im)
   c1.write(img.shape)
 
+##########################
+#Predict image
 
+def predict(image):
+    classifier_model = "nema.h5"
+    IMAGE_SHAPE = (224, 224,3)
+    model = load_model(classifier_model, compile=False, custom_objects={'KerasLayer': hub.KerasLayer})
+    test_image = image
+    test_image = preprocessing.image.img_to_array(test_image)
+    test_image = test_image / 255.0
+    test_image = np.expand_dims(test_image, axis=0)
+    class_names = [
+          'Hoplolaimus',
+          'Mesocriconema',
+          'Pratylenchus']
+    predictions = model.predict(test_image)
+    scores = tf.nn.softmax(predictions[0])
+    scores = scores.numpy()
+    results = {
+          'Hoplolaimus': 0,
+          'Mesocriconema': 0,
+          'Pratylenchus': 0
+}
+
+result = f"{class_names[np.argmax(scores)]} with a { (100 * np.max(scores)).round(2) } % confidence." 
+    return result
