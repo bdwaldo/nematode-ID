@@ -53,6 +53,6 @@ model.compile(loss='binary_crossentropy',
 
 #images = np.vstack([x])
 classes = model.predict_classes(image, batch_size=10)
-print classes
+print(classes)
 
 
