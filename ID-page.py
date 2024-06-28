@@ -53,7 +53,7 @@ x = np.expand_dims(x, axis=0)
 
 images = np.vstack([x])
 classes = model.predict_classes(image)
-print classes
+print(classes)
 
 # predicting multiple images at once
 #img = image.load_img('test2.jpg', target_size=(img_width, img_height))
