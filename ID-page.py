@@ -61,7 +61,7 @@ def predict(image):
           'Mesocriconema': 0,
           'Pratylenchus': 0
     }
-  print(predictions)
+    print(predictions)
 
 
 
