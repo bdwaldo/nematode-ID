@@ -59,7 +59,7 @@ def predict(image):
     results = {
           'Hoplolaimus': 0,
           'Mesocriconema': 0,
-          'Pratylenchus': 0
+          'Pratylenchus': 0,
       print(predictions)
 }
 
