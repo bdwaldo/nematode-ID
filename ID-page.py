@@ -32,13 +32,14 @@ if upload is not None:
   im= Image.open(upload)
   img= np.asarray(im)
   image= cv2.resize(img,(224, 224))
-  #img= preprocess_input(image)
+  img= preprocess_input(image)
   img= np.expand_dims(img, 0)
   c1.header('Input Image')
   c1.image(im)
   c1.write(img.shape)
 
 ##########################
+#https://stackoverflow.com/questions/43469281/how-to-predict-input-image-using-trained-model-in-keras
 #Predict image
 # load the model we saved
 model = load_model('nema_model.h5')
@@ -47,12 +48,12 @@ model.compile(loss='binary_crossentropy',
               metrics=['accuracy'])
 
 # predicting images
-#imgg = image.load_img('test1.jpg', target_size=(img_width, img_height))
+#img = image.load_img('test1.jpg', target_size=(img_width, img_height))
 #x = image.img_to_array(img)
 #x = np.expand_dims(x, axis=0)
 
 #images = np.vstack([x])
-classes = model.predict_classes(image, batch_size=10)
+classes = model.predict_classes(img)
 print(classes)
 
 
