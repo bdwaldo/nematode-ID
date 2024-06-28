@@ -61,6 +61,7 @@ def predict(image):
           'Mesocriconema': 0,
           'Pratylenchus': 0
 }
+print(predictions)
 
 #result = f"{class_names[np.argmax(scores)]} with a { (100 * np.max(scores)).round(2) } % confidence." 
    # return result
