@@ -40,30 +40,32 @@ if upload is not None:
 
 ##########################
 #Predict image
+# load the model we saved
+model = load_model('nema_model.h5')
+model.compile(loss='binary_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
 
-def predict(image):
-    classifier_model = "nema_model.h5"
-    IMAGE_SHAPE = (224, 224,3)
-    model = load_model(classifier_model, compile=False, custom_objects={'KerasLayer': hub.KerasLayer})
-    test_image = image
-    test_image = preprocessing.image.img_to_array(test_image)
-    test_image = test_image / 255.0
-    test_image = np.expand_dims(test_image, axis=0)
-    class_names = [
-          'Hoplolaimus',
-          'Mesocriconema',
-          'Pratylenchus']
-    predictions = model.predict(test_image)
-    scores = tf.nn.softmax(predictions[0])
-    scores = scores.numpy()
-    results = {
-          'Hoplolaimus': 0,
-          'Mesocriconema': 0,
-          'Pratylenchus': 0
-    }
-    print(predictions)
+# predicting images
+#img = image.load_img('test1.jpg', target_size=(img_width, img_height))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
 
+images = np.vstack([x])
+classes = model.predict_classes(image)
+print classes
 
+# predicting multiple images at once
+#img = image.load_img('test2.jpg', target_size=(img_width, img_height))
+#y = image.img_to_array(img)
+#y = np.expand_dims(y, axis=0)
 
-#result = f"{class_names[np.argmax(scores)]} with a { (100 * np.max(scores)).round(2) } % confidence." 
-   # return result
+# pass the list of multiple images np.vstack()
+#images = np.vstack([x, y])
+#classes = model.predict_classes(images, batch_size=10)
+
+# print the classes, the images belong to
+#print classes
+#print classes[0]
+#print classes[0][0]
+
