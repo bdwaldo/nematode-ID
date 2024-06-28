@@ -42,7 +42,7 @@ if upload is not None:
 #Predict image
 
 def predict(image):
-    classifier_model = "nema.h5"
+    classifier_model = "nema_model.h5"
     IMAGE_SHAPE = (224, 224,3)
     model = load_model(classifier_model, compile=False, custom_objects={'KerasLayer': hub.KerasLayer})
     test_image = image
