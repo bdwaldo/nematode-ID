@@ -51,7 +51,7 @@ model.compile(loss='binary_crossentropy',
 #x = image.img_to_array(img)
 #x = np.expand_dims(x, axis=0)
 
-images = np.vstack([x])
+#images = np.vstack([x])
 classes = model.predict_classes(image, batch_size=10)
 print classes
 
