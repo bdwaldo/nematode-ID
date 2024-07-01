@@ -39,21 +39,23 @@ if upload is not None:
   c1.write(img.shape)
 
 ##########################
-#https://stackoverflow.com/questions/43469281/how-to-predict-input-image-using-trained-model-in-keras
+#https://www.tensorflow.org/tutorials/images/classification
 #Predict image
+#load image
+img = tf.keras.utils.load_img(
+    '/90daydata/nematode_ml/test/H_columbus_G-12013_10x_1.png', target_size=(img_height, img_width)
+)
 # load the model we saved
 model = load_model('nema_model.h5')
-#model.compile(loss='binary_crossentropy',
-#              optimizer='rmsprop',
-#              metrics=['accuracy'])
 
-# predicting images
-#img = image.load_img('test1.jpg', target_size=(img_width, img_height))
-#x = image.img_to_array(img)
-#x = np.expand_dims(x, axis=0)
+img_array = tf.keras.utils.img_to_array(img)
+img_array = tf.expand_dims(img_array, 0) # Create a batch
 
-#images = np.vstack([x])
-pred = model.predict(img)
-print(pred)
+predictions = model.predict(img_array)
+score = tf.nn.softmax(predictions[0])
+
+print(
+    "This image most likely belongs to {} with a {:.2f} percent confidence."
+    .format(class_names[np.argmax(score)], 100 * np.max(score)))
 
 
