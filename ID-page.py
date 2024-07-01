@@ -41,10 +41,6 @@ if upload is not None:
 ##########################
 #https://www.tensorflow.org/tutorials/images/classification
 #Predict image
-#load image
-img = tf.keras.utils.load_img(
-    '/90daydata/nematode_ml/test/H_columbus_G-12013_10x_1.png', target_size=(img_height, img_width)
-)
 # load the model we saved
 model = load_model('nema_model.h5')
 
