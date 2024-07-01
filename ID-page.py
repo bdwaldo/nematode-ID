@@ -44,7 +44,7 @@ if upload is not None:
 #https://www.tensorflow.org/tutorials/images/classification
 #Predict image
 # load the model we saved
-model = load_model('nema_model.h5')
+model = tf.keras.models.load_model('nema_model.h5')
 
 img_array = tf.keras.utils.img_to_array(img)
 img_array = tf.expand_dims(img_array, 0) # Create a batch
