@@ -43,9 +43,9 @@ if upload is not None:
 #Predict image
 # load the model we saved
 model = load_model('nema_model.h5')
-model.compile(loss='binary_crossentropy',
-              optimizer='rmsprop',
-              metrics=['accuracy'])
+#model.compile(loss='binary_crossentropy',
+#              optimizer='rmsprop',
+#              metrics=['accuracy'])
 
 # predicting images
 #img = image.load_img('test1.jpg', target_size=(img_width, img_height))
@@ -53,7 +53,7 @@ model.compile(loss='binary_crossentropy',
 #x = np.expand_dims(x, axis=0)
 
 #images = np.vstack([x])
-classes = model.predict_classes(img)
-print(classes)
+pred = model.predict(img)
+print(pred)
 
 
