@@ -32,7 +32,7 @@ if upload is not None:
   im= Image.open(upload)
   img= np.asarray(im)
   image= cv2.resize(img,(224, 224))
-  img= preprocess_input(image)
+  #img= preprocess_input(image)
   img= np.expand_dims(img, 0)
   c1.header('Input Image')
   c1.image(im)
