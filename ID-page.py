@@ -32,7 +32,7 @@ upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 if upload is not None:
   im= Image.open(upload)
-  img_array= cv2.resize(img_array,(224, 224))
+  img_array= cv2.resize(img,(224, 224))
   img= np.asarray(im)
   image= cv2.resize(img,(224, 224))
   img= preprocess_input(image)
