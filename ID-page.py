@@ -32,21 +32,24 @@ upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 if upload is not None:
   im= Image.open(upload)
-  img= np.asarray(im)
-  image= cv2.resize(img,(224, 224))
+ 
+#img= np.asarray(im)
+  #image= cv2.resize(img,(224, 224))
   #img= preprocess_input(image)
-  img= np.expand_dims(img, 0)
-  c1.header('Input Image')
-  c1.image(im)
-  c1.write(img.shape)
+  #img= np.expand_dims(img, 0)
+  #c1.header('Input Image')
+  #c1.image(im)
+  #c1.write(img.shape)
 
 ##########################
 #https://www.tensorflow.org/tutorials/images/classification
 #Predict image
 # load the model we saved
-model = tf.keras.models.load_model('nema_model.h5')
+#https://www.tensorflow.org/tutorials/keras/save_and_load
+model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
-img_array = tf.keras.utils.img_to_array(img)
+img_array = tf.keras.utils.img_to_array(im)
+img_array= cv2.resize(img_array,(224, 224))
 img_array = tf.expand_dims(img_array, 0) # Create a batch
 
 predictions = model.predict(img_array)
