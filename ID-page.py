@@ -30,7 +30,7 @@ img_width = 180
 class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus'] 
 
 #adding text to web page to upload image
-upload= st.file_uploader('Select image for identification', type=['png','jpg'])
+upload= st.file_uploader('Select image for identification', type=['png','jpg']))
 c1, c2= st.columns(2)
 
 #load .h5 model from github repository
