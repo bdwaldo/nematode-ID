@@ -28,6 +28,10 @@ st.caption("Developed by UMD and USDA researchers")
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 #pre-processing image
 #adding text to web page to upload image
+
+img_height = 180
+img_width = 180
+
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 if upload is not None:
@@ -36,8 +40,9 @@ if upload is not None:
   image= cv2.resize(img,(224, 224))
   #img= preprocess_input(image)
   img= np.expand_dims(img, 0)
+  
   ii = tf.keras.utils.load_img(
-    im, target_size=(180, 180))
+    im, target_size=(img_height, img_width))
   img_array = tf.keras.utils.img_to_array(ii)
   img_array = tf.expand_dims(img_array, 0) # Create a batch
   predictions = model.predict(img_array)
