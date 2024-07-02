@@ -15,8 +15,8 @@ import matplotlib.pyplot as plt
 import cv2
 from tensorflow import keras
 from keras import models 
-from keras.preprocessing.image import img_to_array
-#from tensorflow.keras.utils import img_to_array
+#from keras.preprocessing.image import img_to_array
+from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
 
 #webpage text headers
