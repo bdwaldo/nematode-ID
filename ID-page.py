@@ -32,13 +32,17 @@ st.caption("Developed by UMD and USDA researchers")
 #pre-processing image
 #adding text to web page to upload image
 
-class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus']
+
 img_height = 180
 img_width = 180
+
 
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
+
+y_prob = model.predict(x)
+y_classes = y_prob.argmax(axis=-1)
 
 if upload is not None:
   #img = tf.keras.utils.load_img(
@@ -46,13 +50,13 @@ if upload is not None:
   image = keras.utils.load_img(upload, target_size=(img_height, img_width))
   #input_arr = img_to_array(image)
   #img = image.load_img(upload, target_size=(img_height, img_width)) #https://github.com/streamlit/streamlit/issues/4101
-  img = img_to_array(image)
+  img = img_to_array(image) #https://keras.io/api/data_loading/image/
   img = np.expand_dims(img,axis = 0)
   predictions = model.predict(img)
   score = tf.nn.softmax(predictions[0])
   print(
-    "This image most likely belongs to {} with a {:.2f} percent confidence."
-    .format(class_names[np.argmax(score)], 100 * np.max(score)))
+    "This image is most likely {} with a {:.2f} percent confidence."
+    .format(y_classes[np.argmax(score)], 100 * np.max(score)))
 
   #st.write(model.predict(img, verbose=0)[0][0])
   
