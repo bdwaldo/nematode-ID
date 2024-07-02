@@ -42,7 +42,7 @@ model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 if upload is not None:
   #img = tf.keras.utils.load_img(
   # im, target_size=(img_height, img_width))
-  #image = keras.utils.load_img(image_path)
+  image = keras.utils.load_img(image_path)
   #input_arr = img_to_array(image)
   img = image.load_img(upload, target_size=(img_height, img_width)) #https://github.com/streamlit/streamlit/issues/4101
   img = img_to_array(img)
