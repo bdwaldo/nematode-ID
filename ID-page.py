@@ -41,9 +41,6 @@ upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
-y_prob = model.predict(x)
-y_classes = y_prob.argmax(axis=-1)
-
 if upload is not None:
   #img = tf.keras.utils.load_img(
   # im, target_size=(img_height, img_width))
@@ -54,6 +51,9 @@ if upload is not None:
   img = np.expand_dims(img,axis = 0)
   predictions = model.predict(img)
   score = tf.nn.softmax(predictions[0])
+  
+  y_classes = score(axis=-1)
+  
   print(
     "This image is most likely {} with a {:.2f} percent confidence."
     .format(y_classes[np.argmax(score)], 100 * np.max(score)))
