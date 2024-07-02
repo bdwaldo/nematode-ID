@@ -36,25 +36,27 @@ if upload is not None:
   image= cv2.resize(img,(224, 224))
   #img= preprocess_input(image)
   img= np.expand_dims(img, 0)
-  c1.header('Input Image')
-  c1.image(im)
-  c1.write(img.shape)
+  
 
 ##########################
 #https://www.tensorflow.org/tutorials/images/classification
 #Predict image
 # load the model we saved
 #https://www.tensorflow.org/tutorials/keras/save_and_load
-#model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
+model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
-#img_array = tf.keras.utils.img_to_array(im)
-#img_array = tf.expand_dims(img_array, 0) # Create a batch
+img_array = tf.keras.utils.img_to_array(im)
+img_array = tf.expand_dims(img_array, 0) # Create a batch
 
-#predictions = model.predict(img)
-#score = tf.nn.softmax(predictions[0])
+predictions = model.predict(img)
+score = tf.nn.softmax(predictions[0])
 
-#print(
-    #"This image most likely belongs to {} with a {:.2f} percent confidence."
-    #.format(class_names[np.argmax(score)], 100 * np.max(score)))
+
+
+  c1.header('Input Image')
+  c1.image(im)
+  c1.write(
+    "This image most likely belongs to {} with a {:.2f} percent confidence."
+    .format(class_names[np.argmax(score)], 100 * np.max(score)))
 
 
