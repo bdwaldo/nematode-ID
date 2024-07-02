@@ -53,11 +53,12 @@ if upload is not None:
   img = np.expand_dims(img,axis = 0)
   predictions = model.predict(img)
   score = tf.nn.softmax(predictions[0])
+  c1.write(score)
 
   #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
   #y_classes = predictions.argmax(axis = -1)
   
-  print(score)
+  
   
   #print(
    # "This image is most likely {} with a {:.2f} percent confidence."
