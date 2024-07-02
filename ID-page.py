@@ -49,9 +49,10 @@ if upload is not None:
   image = keras.utils.load_img(upload, target_size=(img_height, img_width))
   #input_arr = img_to_array(image)
   #img = image.load_img(upload, target_size=(img_height, img_width)) #https://github.com/streamlit/streamlit/issues/4101
-  img_array = img_to_array(image) #https://keras.io/api/data_loading/image/
+  #img_array = img_to_array(image) #https://keras.io/api/data_loading/image/
+  img_array = np.array(img)
   #img_array = np.expand_dims(img_array,axis = 0)
-  img_array = tf.expand_dims(img_array, 0)
+  #img_array = tf.expand_dims(img_array, 0)
   predictions = model.predict(img_array)
   score = tf.nn.softmax(predictions[0])
   #c1.write(predictions)
