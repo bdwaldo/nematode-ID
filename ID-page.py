@@ -45,7 +45,7 @@ if upload is not None:
 #https://www.tensorflow.org/tutorials/keras/save_and_load
 model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
-img_array = tf.keras.utils.img_to_array(im)
+img_array = tf.keras.utils.img_to_array(upload)
 img_array = tf.expand_dims(img_array, 0) # Create a batch
 
 predictions = model.predict(img)
