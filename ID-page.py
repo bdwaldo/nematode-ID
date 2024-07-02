@@ -38,7 +38,9 @@ c1, c2= st.columns(2)
 model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
 if upload is not None:
-  img = load_img(upload, target_size=(img_height,img_width))
+  img = tf.keras.utils.load_img(
+    im, target_size=(img_height, img_width))
+  #img = load_img(upload, target_size=(img_height,img_width))
   img = img_to_array(img)
   img = np.expand_dims(img,axis = 0)
   st.write(model.predict(img, verbose=0)[0][0])
