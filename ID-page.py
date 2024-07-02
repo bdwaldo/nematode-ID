@@ -14,8 +14,8 @@ from tensorflow.keras.preprocessing import image
 
 #web page text
 st.header("Plant-Parasitic Nematode Image Classification")
-#st.markdown("Upload nematode image for identification")
-st.caption("Model under development by researchers")
+st.markdown("System under development by researchers")
+st.caption("Questions may be directed to Benjamin.Waldo@usda.gov")
 
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 #pre-processing image
