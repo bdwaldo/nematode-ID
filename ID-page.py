@@ -45,7 +45,7 @@ if upload is not None:
   image = keras.utils.load_img(upload, target_size=(img_height, img_width))
   #input_arr = img_to_array(image)
   #img = image.load_img(upload, target_size=(img_height, img_width)) #https://github.com/streamlit/streamlit/issues/4101
-  img = img_to_array(img)
+  img = img_to_array(image)
   img = np.expand_dims(img,axis = 0)
   st.write(model.predict(img, verbose=0)[0][0])
   
