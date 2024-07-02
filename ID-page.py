@@ -64,8 +64,8 @@ if upload is not None:
   c1.write(score)
   
   #st.write(
-    "This image is most likely {} with a {:.2f} percent confidence."
-    .format(class_names[np.argmax(score)], 100 * np.max(score)))
+    #"This image is most likely {} with a {:.2f} percent confidence."
+    #.format(class_names[np.argmax(score)], 100 * np.max(score)))
 
   #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
   #y_classes = predictions.argmax(axis = -1)
