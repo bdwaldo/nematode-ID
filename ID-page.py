@@ -53,9 +53,7 @@ if upload is not None:
 
   #works
   img_array = np.array(image)
-
-  #can unblock these two lines and it kinda works
-  img_array = np.expand_dims(image,axis = 0)
+  img_array = np.expand_dims(img_array,axis = 0)
   #img_array = tf.expand_dims(img_array, 0)
  
   predictions = model.predict(img_array)
