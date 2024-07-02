@@ -32,6 +32,7 @@ upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 if upload is not None:
   im= Image.open(upload)
+  print(im)
   #img_array= cv2.resize(im,(224, 224))
   
 #img= np.asarray(im)
@@ -47,15 +48,15 @@ if upload is not None:
 #Predict image
 # load the model we saved
 #https://www.tensorflow.org/tutorials/keras/save_and_load
-model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
+#model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
-img_array = tf.keras.utils.img_to_array(im)
-img_array = tf.expand_dims(img_array, 0) # Create a batch
+#img_array = tf.keras.utils.img_to_array(im)
+#img_array = tf.expand_dims(img_array, 0) # Create a batch
 
-predictions = model.predict(img)
-score = tf.nn.softmax(predictions[0])
+#predictions = model.predict(img)
+#score = tf.nn.softmax(predictions[0])
 
-print(
+#print(
     "This image most likely belongs to {} with a {:.2f} percent confidence."
     .format(class_names[np.argmax(score)], 100 * np.max(score)))
 
