@@ -61,7 +61,7 @@ if upload is not None:
   predictions = model.predict(img_array)
   score = tf.nn.softmax(predictions[0])
   c1.write(predictions)
-  c1.write(score)
+  c1.write(class_names[np.argmax(score)])
   
   #st.write(
     #"This image is most likely {} with a {:.2f} percent confidence."
