@@ -36,7 +36,7 @@ st.caption("Model under development by UMD and USDA researchers")
 img_height = 180
 img_width = 180
 
-class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus', 'Tree']
+class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus']
 
 
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
