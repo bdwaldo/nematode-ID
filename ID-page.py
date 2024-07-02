@@ -30,7 +30,7 @@ img_width = 180
 class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus'] 
 
 #adding text to web page to upload image
-upload= st.file_uploader('Select image for identification', type=['png','jpg']))
+upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 
 #load .h5 model from github repository
@@ -43,7 +43,7 @@ model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
 if upload is not None:
   #load image from upload button
-  image = keras.utils.load_img(upload, target_size=(img_height, img_width)
+  image = keras.utils.load_img(upload, target_size=(img_height, img_width))
 
   #convert image to array
   img_array = np.array(image)
