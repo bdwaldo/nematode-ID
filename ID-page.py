@@ -37,7 +37,7 @@ c1, c2= st.columns(2)
 if upload is not None:
   im= Image.open(upload)
   img= np.asarray(im)
-  image= cv2.resize(img,(224, 224))
+  image= cv2.resize(img,(180, 180))
   #img= preprocess_input(image)
   img= np.expand_dims(img, 0)
   
