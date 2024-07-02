@@ -50,19 +50,20 @@ if upload is not None:
   #input_arr = img_to_array(image)
   #img = image.load_img(upload, target_size=(img_height, img_width)) #https://github.com/streamlit/streamlit/issues/4101
   #img_array = img_to_array(image) #https://keras.io/api/data_loading/image/
- 
+
+  #works
   img_array = np.array(image)
 
   #can unblock these two lines and it kinda works
-  #img_array = np.expand_dims(img_array,axis = 0)
-  img_array = tf.expand_dims(img_array, 0)
+  img_array = np.expand_dims(image,axis = 0)
+  #img_array = tf.expand_dims(img_array, 0)
  
   predictions = model.predict(img_array)
   score = tf.nn.softmax(predictions[0])
   #c1.write(predictions)
   st.write(
     "This image is most likely {} with a {:.2f} percent confidence."
-    .format(class_names[np.argmax(score)], 100 * np.max(score)))
+    .format(class_names[np.argmax(predictions, axis =1)], 100 * np.max(predictions)))
 
   #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
   #y_classes = predictions.argmax(axis = -1)
