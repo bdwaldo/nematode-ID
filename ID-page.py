@@ -36,6 +36,8 @@ st.caption("Developed by UMD and USDA researchers")
 img_height = 180
 img_width = 180
 
+class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus']
+
 
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
@@ -51,12 +53,13 @@ if upload is not None:
   img = np.expand_dims(img,axis = 0)
   predictions = model.predict(img)
   score = tf.nn.softmax(predictions[0])
-  
-  y_classes = predictions.argmax(axis = -1)
+
+  #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
+  #y_classes = predictions.argmax(axis = -1)
   
   print(
     "This image is most likely {} with a {:.2f} percent confidence."
-    .format(y_classes[np.argmax(score)], 100 * np.max(score)))
+    .format(class_names[np.argmax(score)], 100 * np.max(score)))
 
   #st.write(model.predict(img, verbose=0)[0][0])
   
