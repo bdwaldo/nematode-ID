@@ -16,6 +16,7 @@ import cv2
 from tensorflow import keras
 from keras import models 
 from PIL import Image
+from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
 
 #webpage text headers
@@ -42,6 +43,7 @@ model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 if upload is not None:
   #img = tf.keras.utils.load_img(
   # im, target_size=(img_height, img_width))
+  #https://github.com/streamlit/streamlit/issues/4101
   img = image.load_img(upload, target_size=(img_height,img_width))
   img = img_to_array(img)
   img = np.expand_dims(img,axis = 0)
