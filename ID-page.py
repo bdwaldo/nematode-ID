@@ -26,7 +26,7 @@ from tensorflow.keras.preprocessing import image
 
 st.header("Plant-Parasitic Nematode Image Classification")
 st.markdown("Upload nematode image for identification")
-st.caption("Developed by UMD and USDA researchers")
+st.caption("Model under development by UMD and USDA researchers")
 
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 #pre-processing image
@@ -53,10 +53,10 @@ if upload is not None:
   img = np.expand_dims(img,axis = 0)
   predictions = model.predict(img)
   score = tf.nn.softmax(predictions[0])
-  #c1.write(score)
-st.write(
-  "This image is most likely {} with a {:.2f} percent confidence."
-  .format(class_names[np.argmax(score)], 100 * np.max(score)))
+  c1.write(predictions)
+#st.write(
+  #"This image is most likely {} with a {:.2f} percent confidence."
+  #.format(class_names[np.argmax(score)], 100 * np.max(score)))
 
   #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
   #y_classes = predictions.argmax(axis = -1)
