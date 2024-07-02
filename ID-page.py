@@ -32,14 +32,15 @@ upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 if upload is not None:
   im= Image.open(upload)
-  img_array= cv2.resize(im,(224, 224))
-  img= np.asarray(im)
-  image= cv2.resize(img,(224, 224))
-  img= preprocess_input(image)
-  img= np.expand_dims(img, 0)
-  c1.header('Input Image')
-  c1.image(im)
-  c1.write(img.shape)
+  #img_array= cv2.resize(im,(224, 224))
+  
+#img= np.asarray(im)
+  #image= cv2.resize(img,(224, 224))
+  #img= preprocess_input(image)
+  #img= np.expand_dims(img, 0)
+  #c1.header('Input Image')
+  #c1.image(im)
+  #c1.write(img.shape)
 
 ##########################
 #https://www.tensorflow.org/tutorials/images/classification
@@ -48,8 +49,8 @@ if upload is not None:
 #https://www.tensorflow.org/tutorials/keras/save_and_load
 model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
-#img_array = tf.keras.utils.img_to_array(im)
-#img_array = tf.expand_dims(img_array, 0) # Create a batch
+img_array = tf.keras.utils.img_to_array(im)
+img_array = tf.expand_dims(img_array, 0) # Create a batch
 
 predictions = model.predict(img)
 score = tf.nn.softmax(predictions[0])
