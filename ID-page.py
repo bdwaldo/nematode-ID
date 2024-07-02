@@ -58,13 +58,13 @@ if upload is not None:
  
   predictions = model.predict(img_array)
   score = tf.nn.softmax(predictions[0])
-  c1.write(predictions)
-  c1.write(score)
-  st.write(class_names[np.argmax(score)], 100 * np.max(score))
+  #c1.write(predictions)
+  #c1.write(score)
+  #st.write(class_names[np.argmax(score)], 100 * np.max(score))
   
-  #st.write(
-    #"This image is most likely {} with a {:.2f} percent confidence."
-    #.format(class_names[np.argmax(score)], 100 * np.max(score)))
+  st.write(
+    "This image is most likely {} with a {:.2f} percent confidence."
+    .format(class_names[np.argmax(score)], 100 * np.max(score)))
 
   #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
   #y_classes = predictions.argmax(axis = -1)
