@@ -52,7 +52,7 @@ if upload is not None:
   predictions = model.predict(img)
   score = tf.nn.softmax(predictions[0])
   
-  y_classes = score(axis=-1)
+  y_classes = np.expand_dims(img,axis = -1)
   
   print(
     "This image is most likely {} with a {:.2f} percent confidence."
