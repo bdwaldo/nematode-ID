@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 import cv2
 from tensorflow import keras
 from keras import models 
+from PIL import Image
+from tensorflow.keras.preprocessing import image
 
 #webpage text headers
 #st.markdown('<h1 style="color:black;">Image classification model</h1>', unsafe_allow_html=False)
@@ -40,7 +42,7 @@ model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 if upload is not None:
   img = tf.keras.utils.load_img(
     im, target_size=(img_height, img_width))
-  #img = load_img(upload, target_size=(img_height,img_width))
+  #img = image.load_img(upload, target_size=(img_height,img_width))
   img = img_to_array(img)
   img = np.expand_dims(img,axis = 0)
   st.write(model.predict(img, verbose=0)[0][0])
