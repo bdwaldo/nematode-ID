@@ -14,7 +14,7 @@ from tensorflow.keras.preprocessing import image
 
 #web page text
 st.header("Plant-Parasitic Nematode Image Classification")
-st.markdown("Upload nematode image for identification")
+#st.markdown("Upload nematode image for identification")
 st.caption("Model under development by researchers")
 
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
@@ -53,7 +53,7 @@ if upload is not None:
   predictions = model.predict(img_array)
   score = tf.nn.softmax(predictions[0])
 
-  #print image
+  #print image can omit these three lines
   iu= Image.open(upload)
   c1.header('Input Image')
   c1.image(iu)
