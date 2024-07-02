@@ -26,7 +26,7 @@ from tensorflow.keras.preprocessing import image
 
 st.header("Plant-Parasitic Nematode Image Classification")
 st.markdown("Upload nematode image for identification")
-st.caption("Model under development by UMD and USDA researchers")
+st.caption("Model under development by researchers")
 
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 #pre-processing image
@@ -36,7 +36,7 @@ st.caption("Model under development by UMD and USDA researchers")
 img_height = 180
 img_width = 180
 
-class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus'] 
+class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus', 'Pineapple', 'Orange'] 
 
 
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
