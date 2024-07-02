@@ -47,7 +47,13 @@ if upload is not None:
   #img = image.load_img(upload, target_size=(img_height, img_width)) #https://github.com/streamlit/streamlit/issues/4101
   img = img_to_array(image)
   img = np.expand_dims(img,axis = 0)
-  st.write(model.predict(img, verbose=0)[0][0])
+  predictions = model.predict(img)
+  score = tf.nn.softmax(predictions[0])
+  print(
+    "This image most likely belongs to {} with a {:.2f} percent confidence."
+    .format(class_names[np.argmax(score)], 100 * np.max(score)))
+
+  #st.write(model.predict(img, verbose=0)[0][0])
   
   
   
