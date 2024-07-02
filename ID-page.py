@@ -25,23 +25,20 @@ st.header("Plant-Parasitic Nematode Image Classification")
 st.markdown("Upload nematode image for identification")
 st.caption("Developed by UMD and USDA researchers")
 
-
+#https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
 #pre-processing image
 #adding text to web page to upload image
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 if upload is not None:
   im= Image.open(upload)
-  print(im)
-  #img_array= cv2.resize(im,(224, 224))
-  
-#img= np.asarray(im)
-  #image= cv2.resize(img,(224, 224))
-  #img= preprocess_input(image)
-  #img= np.expand_dims(img, 0)
-  #c1.header('Input Image')
-  #c1.image(im)
-  #c1.write(img.shape)
+  img= np.asarray(im)
+  image= cv2.resize(img,(224, 224))
+  img= preprocess_input(image)
+  img= np.expand_dims(img, 0)
+  c1.header('Input Image')
+  c1.image(im)
+  c1.write(img.shape)
 
 ##########################
 #https://www.tensorflow.org/tutorials/images/classification
