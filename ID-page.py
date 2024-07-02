@@ -57,6 +57,7 @@ if upload is not None:
   #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
   #y_classes = predictions.argmax(axis = -1)
   
+  
   print(
     "This image is most likely {} with a {:.2f} percent confidence."
     .format(class_names[np.argmax(score)], 100 * np.max(score)))
