@@ -32,6 +32,7 @@ st.caption("Developed by UMD and USDA researchers")
 #pre-processing image
 #adding text to web page to upload image
 
+class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus']
 img_height = 180
 img_width = 180
 
