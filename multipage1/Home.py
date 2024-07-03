@@ -9,7 +9,7 @@ st.title("This is the Home Page.")
 #create sidebar. Will have a background color green to indicate success
 st.sidebar.success("Select Any Page from here") 
 
-Single = st.Page(
+st.Page(
     "multipage1/pages/Diagnose Samples/Single.py", title="Diagnose Samples", icon=":material/dashboard:", default=True
 )
 #st.Page("Diagnose Samples/Single.py", title="Single", icon=":material/bug_report:")
