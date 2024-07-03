@@ -6,4 +6,4 @@ import streamlit as st
 st.title("This is PageOne.")
 
 #display text in the greenbackground box
-stm.sidebar.success("You are currently viewing Page One")
+st.sidebar.success("You are currently viewing Page One")
