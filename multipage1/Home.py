@@ -10,7 +10,7 @@ st.title("This is the Home Page.")
 st.sidebar.success("Select Any Page from here") 
 
 Single = st.Page(
-    "multipage1/Diagnose Samples/Single.py", title="Diagnose Samples", icon=":material/dashboard:", default=True
+    "multipage1/pages/Diagnose Samples/Single.py", title="Diagnose Samples", icon=":material/dashboard:", default=True
 )
 #st.Page("Diagnose Samples/Single.py", title="Single", icon=":material/bug_report:")
 
