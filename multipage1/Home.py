@@ -12,7 +12,7 @@ st.sidebar.success("Select Any Page from here")
 
 
 #########################
-#pg = st.navigation([st.Page("pages/ID Now.py"), st.Page("pages/Nematode Profiles.py")])
-#pg.run()
+pg = st.navigation([st.Page("pages/ID Now.py"), st.Page("pages/Nematode Profiles.py")])
+pg.run()
 
 
