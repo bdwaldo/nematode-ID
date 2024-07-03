@@ -9,6 +9,6 @@ import streamlit as st
 #create sidebar. Will have a background color green to indicate success
 #st.sidebar.success("Select Any Page from here") 
 
-pg = st.navigation([st.Page("pages/ID Now.py"), st.Page("Nematode Profiles.py")])
+pg = st.navigation([st.Page("pages/ID Now.py"), st.Page("pages/Nematode Profiles.py")])
 pg.run()
 
