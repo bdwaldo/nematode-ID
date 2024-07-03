@@ -9,5 +9,5 @@ st.title("This is the Home Page.")
 #create sidebar. Will have a background color green to indicate success
 st.sidebar.success("Select Any Page from here") 
 
-pg = st.navigation([st.Page("pages/Diagnose Samples/Single.py")}#, st.Page("pages/Diagnose Samples/Diganose Samples.py")])
+pg = st.navigation([st.Page("pages/Diagnose Samples/Single.py")])#, st.Page("pages/Diagnose Samples/Diganose Samples.py")])
 pg.run()
