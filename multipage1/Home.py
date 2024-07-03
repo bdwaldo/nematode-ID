@@ -9,7 +9,7 @@ st.title("This is the Home Page.")
 #create sidebar. Will have a background color green to indicate success
 st.sidebar.success("Select Any Page from here") 
 
-#create a directory in the same location as this file with the name, "pages".
-#The page names will showup in the didebar of this home page
-#pages are listed alphabetically by defalt
-
+dashboard = st.Page(
+    "Diagnose Samples/Diagnose Samples.py", title="Diagnose Samples", icon=":material/dashboard:", default=True
+)
+bugs = st.Page("Diagnose Samples/Single.py", title="Single", icon=":material/bug_report:")
