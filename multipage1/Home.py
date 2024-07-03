@@ -14,5 +14,5 @@ Single = st.Page(
 )
 #st.Page("Diagnose Samples/Single.py", title="Single", icon=":material/bug_report:")
 
-pg = st.navigation(
+st.navigation(
         {"Reports": [Single]})
