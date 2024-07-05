@@ -10,6 +10,5 @@ with st.form("my_form"):
   st.text_input("Variety")
   st.selectbox('Symptoms', ["","none", "galling", "stunted roots", "wilting", "chlorosis", "other"])
   submitted = st.form_submit_button('Submit')
-  if submitted:
-        st.write('Form submitted')
+
 
