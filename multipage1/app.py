@@ -36,4 +36,4 @@ pg = st.navigation(
 )
 
 pg.run()
-home.run
+home.run()
