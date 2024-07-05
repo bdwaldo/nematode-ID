@@ -1,0 +1,17 @@
+credentials:
+  usernames:
+    benjamin:
+      email: g@gmail.com
+      name: benjamin
+      password: abc # To be replaced with hashed password
+    #rbriggs:
+     # email: rbriggs@gmail.com
+      #name: Rebecca Briggs
+      #password: def # To be replaced with hashed password
+cookie:
+  expiry_days: 1
+  key: hhggbbn # Must be string
+  name: some_cookie_name
+preauthorized:
+  emails:
+  - benjamin.waldo@usda.gov
