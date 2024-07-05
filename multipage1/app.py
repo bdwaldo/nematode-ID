@@ -3,7 +3,7 @@
 import streamlit as st
 
 home = st.Page(
-    "Home.py", title="Home", icon = ":material/home:" default=True
+    "Home.py", title="Home", icon = ":material/home:", default=True
 )
 id_now = st.Page("ID Now.py", title="ID Now", icon=":material/arrow_forward:" default=False)
 
@@ -14,15 +14,15 @@ batch = st.Page(
     "diagnose/Batch.py", title = "Batch", icon=":material/stacks:", default=False) 
 
 tutorial = st.Page(
-    "help/Tutorial.py", title="Tutorial", icon=":material/text_snippet:"  default=False
+    "help/Tutorial.py", title="Tutorial", icon=":material/text_snippet:",  default=False
 )
 
 faq = st.Page(
-    "help/FAQ.py", title="FAQ", icon=":material/help:" default=False
+    "help/FAQ.py", title="FAQ", icon=":material/help:", default=False
 )
 
 contact = st.Page(
-    "help/Contact.py", title="Contact", icon=":material/info:" default=False
+    "help/Contact.py", title="Contact", icon=":material/info:", default=False
 )
 
 
