@@ -17,7 +17,7 @@ tutorial = st.Page(
 )
 
 faq = st.Page(
-    "help/Help.py", title="FAQ", icon=":material/dashboard:", default=False
+    "help/FAQ.py", title="FAQ", icon=":material/dashboard:", default=False
 )
 
 support = st.Page(
