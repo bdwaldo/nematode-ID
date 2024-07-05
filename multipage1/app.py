@@ -31,7 +31,7 @@ pg = st.navigation(
   {
     "Home": [],
     "ID Now": [],
-    "Diagnose": [single, batch],
+    "Diagnose Sample": [single, batch],
     "Help":[tutorial, faq, support]
   }
 )
