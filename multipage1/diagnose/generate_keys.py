@@ -1,9 +1,12 @@
 #https://www.youtube.com/watch?v=JoFGrSRj4X4
 import pickle
 from pathlib import Path
-from streamlit_authenticator.utilities import hasher
+
 
 import streamlit_authenticator as stauth
+from streamlit_authenticator.utilities import hasher
+
+
 
 names = ["Benjamin"]
 usernames = ["nema-guy"]
