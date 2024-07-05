@@ -7,7 +7,7 @@ names = ["Benjamin"]
 usernames = ["nema-guy"]
 passwords = ["XXX"]
 
-hashed_passwords = stauth.hasher(passwords).generate()
+hashed_passwords = stauth.Hasher(passwords).generate()
 
 #create pickle file and save information
 file_path = Path(_file_).parent / "hashed_pw.pkl"
