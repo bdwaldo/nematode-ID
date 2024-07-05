@@ -1,5 +1,7 @@
 #https://docs.streamlit.io/develop/concepts/multipage-apps/page-and-navigation
 
+import streamlit as st
+
 home = st.Page(
     "multipage1/home.py", title="Home", icon=":material/dashboard:", default=True
 )
