@@ -28,7 +28,7 @@ contact = st.Page(
 
 
 pg = st.navigation(
-  { "Home": [home]
+  { "Home": [home],
     "ID Now": [],
     "Diagnose Sample": [single, batch],
     "Help":[tutorial, faq, contact]
