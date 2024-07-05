@@ -1,4 +1,4 @@
-#https://docs.streamlit.io/develop/concepts/multipage-apps/page-and-navigation
+ate_keys#https://docs.streamlit.io/develop/concepts/multipage-apps/page-and-navigation
 
 import streamlit as st
 
@@ -14,7 +14,7 @@ single = st.Page(
     "diagnose/Single.py", title="Single", icon=":material/file_open:", default=False)
 
 batch = st.Page(
-    "diagnose/Batch.py", title = "Batch", icon=":material/stacks:", default=False) 
+    "diagnose/generate_keys.py", title = "Batch", icon=":material/stacks:", default=False) 
 
 tutorial = st.Page(
     "help/Tutorial.py", title="Tutorial", icon=":material/text_snippet:",  default=False
