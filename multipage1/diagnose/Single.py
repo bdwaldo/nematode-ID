@@ -6,8 +6,8 @@ st.text_input("Sample ID")
 st.text_input("State sample collected")
 st.text_input("Location identifier (field, green...etc)") 
 st.selectbox('Sample Type', ["","soil", "roots", "leaves"])
-st.text_input("crop")
-st.text_input("variety")
+st.text_input("Crop")
+st.text_input("Variety")
 st.selectbox('Symptoms', ["","none", "galling", "stunted roots", "wilting", "chlorosis", "other"])
 
 
