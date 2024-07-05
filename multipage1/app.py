@@ -3,7 +3,7 @@
 import streamlit as st
 
 home = st.Page(
-    "Home.py", title="Home", icon = ":material/home:", default=True
+    "Home.py", title="Home", icon = ":material/home:", position = hidden, default=True
 )
 id_now = st.Page("ID Now.py", title="ID Now", icon=":material/arrow_forward:", default=False)
 
@@ -28,7 +28,7 @@ contact = st.Page(
 
 
 pg = st.navigation(
-  {
+  { "Home": [home]
     "ID Now": [],
     "Diagnose Sample": [single, batch],
     "Help":[tutorial, faq, contact]
@@ -36,4 +36,3 @@ pg = st.navigation(
 )
 
 pg.run()
-home.run()
