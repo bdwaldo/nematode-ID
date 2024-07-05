@@ -18,7 +18,7 @@ st.markdown(
     ### Want to learn more?
     - Check out the tutorial [Tutorial](https://streamlit.io)
 
-    ### See more complex demos
+    ### Basic Information
     - See the help page [Help](https://github.com/streamlit/demo-self-driving)
 """
 )
