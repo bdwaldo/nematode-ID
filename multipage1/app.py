@@ -6,8 +6,9 @@ home = st.Page(
     "Home.py", title="Home", icon=":material/dashboard:", default=True
 )
 id_now = st.Page("ID Now.py", title="ID Now", icon=":material/bug_report:",default=False)
+
 single = st.Page(
-    "diagnose/Single.py", title="Diagnose Samples", icon=":material/notification_important:", default=False
+    "diagnose/Single.py", title="Single", icon=":material/notification_important:", default=False
 )
 batch = st.Page(
     "diagnose/Batch.py", title = "Batch", default=False) 
