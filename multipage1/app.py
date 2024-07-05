@@ -14,7 +14,7 @@ single = st.Page(
     "diagnose/Single.py", title="Single", icon=":material/file_open:", default=False)
 
 batch = st.Page(
-    "diagnose/generate_keys.py", title = "Batch", icon=":material/stacks:", default=False) 
+    "diagnose/Batch.py", title = "Batch", icon=":material/stacks:", default=False) 
 
 tutorial = st.Page(
     "help/Tutorial.py", title="Tutorial", icon=":material/text_snippet:",  default=False
