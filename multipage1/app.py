@@ -13,11 +13,11 @@ batch = st.Page(
     "diagnose/Batch.py", title = "Batch", default=True) 
 
 tutorial = st.Page(
-    "multipage1/help/Tutorial.py", title="Tutorial", icon=":material/dashboard:", default=True
+    "help/Tutorial.py", title="Tutorial", icon=":material/dashboard:", default=True
 )
 
 help = st.Page(
-    "multipage1/help/Help.py", title="Tutorial", icon=":material/dashboard:", default=True
+    "help/Help.py", title="Tutorial", icon=":material/dashboard:", default=True
 )
 
 
