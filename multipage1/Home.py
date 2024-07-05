@@ -17,9 +17,9 @@ st.sidebar.success("Select Any Page from here")
 
 #####################
 diagnose = st.Page(
-    "Diagnose/Diagnose Samples.py", title="Diagnose", icon=":material/dashboard:", default=True
+    "Diagnose Samples/Diagnose Samples.py", title="Diagnose", icon=":material/dashboard:", default=True
 )
-single = st.Page("Diagnose/Single.py", title="Single", icon=":material/bug_report:")
+single = st.Page("Diagnose Samples/Single.py", title="Single", icon=":material/bug_report:")
 batch = st.Page(
     "Diagnose/Batch.py", title="Batch", icon=":material/notification_important:"
 )
