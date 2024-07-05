@@ -11,6 +11,6 @@ hashed_passwords = stauth.Hasher(passwords).generate()
 
 #create pickle file and save information
 file_path = Path(_file_).parent / "hashed_pw.pkl"
-with file_path.open("nb") as file:
+with file_path.open("wb") as file:
   pickle.dump(hashed_passwords, file)
  
