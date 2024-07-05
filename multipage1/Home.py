@@ -3,19 +3,12 @@
 
 import streamlit as st 
 
-st.set_page_config(page_title = "Nematode ID") 
-st.title("Nematode ID")
 
-#create sidebar. Will have a background color green to indicate success
-st.sidebar.success("Select Any Page from here") 
- 
-
-
-#########################
-#pg = st.navigation([st.Page("pages/ID Now.py"), st.Page("pages/Nematode Profiles.py")])
-#pg.run()
 
 #####################
+home = st.Page(
+ "multipage1/Home.py", title = "Home", default = True)
+
 diagnose = st.Page(
     "Diagnose Samples/Diagnose Samples.py", title="Diagnose", icon=":material/dashboard:", default=True
 )
@@ -27,8 +20,8 @@ id_now = st.Page("pages/ID now.py", title = "ID Now", default = True)
 
 pg = st.navigation(
         {
-            "Diagnose": [logout_page],
-            "Diagnose": [dashboard, bugs, alerts],
+            "Home": [home],
+            "Diagnose": [single, batch],
             "ID now": [id_now]
         }
     )
