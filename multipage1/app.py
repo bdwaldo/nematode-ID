@@ -8,7 +8,7 @@ home = st.Page(
 id_now = st.Page("ID Now.py", title="ID Now", icon=":material/arrow_forward:", default=False)
 
 login = st.Page(
-    "diagnose/generate_keys.py", title="Login", icon=":material/login:", default=False)
+    "diagnose/Login.py", title="Login", icon=":material/login:", default=False)
 
 single = st.Page(
     "diagnose/Single.py", title="Single", icon=":material/file_open:", default=False)
