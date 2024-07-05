@@ -3,26 +3,26 @@
 import streamlit as st
 
 home = st.Page(
-    "Home.py", title="Home", icon=":material/dashboard:", default=True
+    "Home.py", title="Home", default=True
 )
-id_now = st.Page("ID Now.py", title="ID Now", icon=":material/bug_report:",default=False)
+id_now = st.Page("ID Now.py", title="ID Now", default=False)
 
 single = st.Page(
-    "diagnose/Single.py", title="Single", icon=":material/notification_important:", default=False
+    "diagnose/Single.py", title="Single", default=False
 )
 batch = st.Page(
     "diagnose/Batch.py", title = "Batch", default=False) 
 
 tutorial = st.Page(
-    "help/Tutorial.py", title="Tutorial", icon=":material/dashboard:", default=False
+    "help/Tutorial.py", title="Tutorial",  default=False
 )
 
 faq = st.Page(
-    "help/FAQ.py", title="FAQ", icon=":material/dashboard:", default=False
+    "help/FAQ.py", title="FAQ", default=False
 )
 
 support = st.Page(
-    "help/Support.py", title="Support", icon=":material/dashboard:", default=False
+    "help/Support.py", title="Support", default=False
 )
 
 
