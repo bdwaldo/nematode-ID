@@ -15,20 +15,14 @@ with file_path.open("rb") as file: #open with root binary mode
 authenticator = stauth.Authenticate(names, usernames, hashed_passwords, 
                                     "nema-ID", "4fet", cookie_expiry_days=1) #cookie
 
-hashed_passwords = stauth.Hasher(passwords).generate()
+name, authentication_status, username = authenticator.login("Login", "main")
 
+#authentication status
+if authentication_status == False: 
+    st.error("Username/password is incorrent")
 
+if authentification_status == None:
+    st.warning("Please enter your uername and password")
 
-
-if authentication_status:
-    authenticator.logout('Logout', 'main')
-    st.write(f'Welcome *{name}*')
-    st.title('Some content')
-elif authentication_status == False:
-    st.error('Username/password is incorrect')
-elif authentication_status == None:
-    st.warning('Please enter your username and password')
-
-file_path = Path(_file_).parent / "hashed_pw.pkl"
-with file_path.open("wb") as file:
-  pickle.dump(hashed_passwords, file)
+authenticator.logout("Logout", "sidebar")
+st.sidebar.title(f"Welcome {name}")
