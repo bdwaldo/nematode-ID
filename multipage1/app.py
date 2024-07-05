@@ -22,7 +22,7 @@ faq = st.Page(
 )
 
 support = st.Page(
-    "help/Support.py", title="FAQ", icon=":material/dashboard:", default=False
+    "help/Support.py", title="Support", icon=":material/dashboard:", default=False
 )
 
 
