@@ -3,9 +3,9 @@
 import streamlit as st
 
 home = st.Page(
-    "Home.py", title="Home", default=True
+    "Home.py", title="Home", icon=":material/home:" default=True
 )
-id_now = st.Page("ID Now.py", title="ID Now", default=False)
+id_now = st.Page("ID Now.py", title="ID Now", icon=":material/arrow_forward:" default=False)
 
 single = st.Page(
     "diagnose/Single.py", title="Single", icon=":material/file_open:", default=False
@@ -14,15 +14,15 @@ batch = st.Page(
     "diagnose/Batch.py", title = "Batch", icon=":material/stacks:", default=False) 
 
 tutorial = st.Page(
-    "help/Tutorial.py", title="Tutorial",  default=False
+    "help/Tutorial.py", title="Tutorial", icon=":material/text_snippet:"  default=False
 )
 
 faq = st.Page(
-    "help/FAQ.py", title="FAQ", default=False
+    "help/FAQ.py", title="FAQ", icon=":material/help:" default=False
 )
 
-support = st.Page(
-    "help/Support.py", title="Support", default=False
+contact = st.Page(
+    "help/Contact.py", title="Contact", icon=":material/info:" default=False
 )
 
 
@@ -32,7 +32,7 @@ pg = st.navigation(
     "Home": [],
     "ID Now": [],
     "Diagnose Sample": [single, batch],
-    "Help":[tutorial, faq, support]
+    "Help":[tutorial, faq, contact]
   }
 )
 
