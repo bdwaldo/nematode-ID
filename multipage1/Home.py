@@ -5,7 +5,7 @@ import streamlit as st
 
 
 
-#####################
+
 home = st.Page(
  "multipage1/Home.py", title = "Home", default = True)
 
