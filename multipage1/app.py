@@ -8,10 +8,10 @@ home = st.Page(
 id_now = st.Page("ID Now.py", title="ID Now", default=False)
 
 single = st.Page(
-    "diagnose/Single.py", title="Single", default=False
+    "diagnose/Single.py", title="Single", icon=":material/file_open:", default=False
 )
 batch = st.Page(
-    "diagnose/Batch.py", title = "Batch", default=False) 
+    "diagnose/Batch.py", title = "Batch", icon=":material/stacks:", default=False) 
 
 tutorial = st.Page(
     "help/Tutorial.py", title="Tutorial",  default=False
