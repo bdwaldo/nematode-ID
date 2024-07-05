@@ -3,13 +3,13 @@
 import streamlit as st
 
 home = st.Page(
-    "Home.py", title="Home", icon = ":material/home:", default=True
-)
+    "Home.py", title="Home", icon = ":material/home:", default=True)
+
 id_now = st.Page("ID Now.py", title="ID Now", icon=":material/arrow_forward:", default=False)
 
 single = st.Page(
-    "diagnose/Single.py", title="Single", icon=":material/file_open:", default=False
-)
+    "diagnose/Single.py", title="Single", icon=":material/file_open:", default=False)
+
 batch = st.Page(
     "diagnose/Batch.py", title = "Batch", icon=":material/stacks:", default=False) 
 
