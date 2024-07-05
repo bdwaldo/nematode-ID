@@ -3,7 +3,7 @@
 import streamlit as st
 
 home = st.Page(
-    "multipage1/home.py", title="Home", icon=":material/dashboard:", default=True
+    "multipage1/Home.py", title="Home", icon=":material/dashboard:", default=True
 )
 id_Now = st.Page("multipage1/ID Now.py", title="ID Now", icon=":material/bug_report:",default=True)
 single = st.Page(
