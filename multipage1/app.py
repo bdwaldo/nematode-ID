@@ -29,7 +29,6 @@ contact = st.Page(
 
 pg = st.navigation(
   {
-    "Home": [],
     "ID Now": [],
     "Diagnose Sample": [single, batch],
     "Help":[tutorial, faq, contact]
@@ -37,3 +36,4 @@ pg = st.navigation(
 )
 
 pg.run()
+st.write(home)
