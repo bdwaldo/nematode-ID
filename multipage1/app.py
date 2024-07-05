@@ -16,18 +16,22 @@ tutorial = st.Page(
     "help/Tutorial.py", title="Tutorial", icon=":material/dashboard:", default=False
 )
 
-help = st.Page(
-    "help/Help.py", title="Tutorial", icon=":material/dashboard:", default=False
+faq = st.Page(
+    "help/Help.py", title="FAQ", icon=":material/dashboard:", default=False
+)
+
+support = st.Page(
+    "help/Support.py", title="FAQ", icon=":material/dashboard:", default=False
 )
 
 
 
 pg = st.navigation(
   {
-    "Home": [home],
-    "ID Now": [id_now],
+    "Home": [],
+    "ID Now": [],
     "Diagnose": [single, batch],
-    "Help":[tutorial, help]
+    "Help":[tutorial, faq, support]
   }
 )
 
