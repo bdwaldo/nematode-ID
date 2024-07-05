@@ -16,10 +16,9 @@ st.markdown(
     Nematode ID is a source for identifying plant-parasitic nematodes from images.
     **Select a page from the sidebar** to get started.
     ### Want to learn more?
-    - Check out [streamlit.io](https://streamlit.io)
+    - Check out the tutorial [Tutorial](https://streamlit.io)
 
     ### See more complex demos
-    - Use a neural net to [analyze the Udacity Self-driving Car Image
-        Dataset](https://github.com/streamlit/demo-self-driving)
+    - See the help page [Help](https://github.com/streamlit/demo-self-driving)
 """
 )
