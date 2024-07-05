@@ -36,4 +36,4 @@ pg = st.navigation(
 )
 
 pg.run()
-st.Page(home)
+home.run
