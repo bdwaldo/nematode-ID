@@ -5,7 +5,7 @@ import streamlit as st
 home = st.Page(
     "Home.py", title="Home", icon=":material/dashboard:", default=True
 )
-id_Now = st.Page("ID Now.py", title="ID Now", icon=":material/bug_report:",default=True)
+id_now = st.Page("ID Now.py", title="ID Now", icon=":material/bug_report:",default=True)
 single = st.Page(
     "diagnose/Single.py", title="Diagnose Samples", icon=":material/notification_important:", default=True
 )
