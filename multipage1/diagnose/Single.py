@@ -43,7 +43,7 @@ st.write(df)
 
 
 
-data_as_csv= csv_data.to_csv(index=False).encode("utf-8")
+data_as_csv= df.to_csv(index=False).encode("utf-8")
 st.download_button(
     "Download data as CSV", 
     data_as_csv, 
