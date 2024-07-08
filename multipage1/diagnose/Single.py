@@ -23,8 +23,8 @@ fields = [sample_submitter, sample_id, phone,
 
 name = [sample_submitter, sample_id, date]
 
-with open('sample_1.csv','a', newline='') as f:
-    writer = csv.writer(f)
-    writer.writerow(fields)
 
+st.download_button(label='📥 Download Current Result',
+                                data=fields ,
+                                file_name= 'sample_1.xlsx')
 
