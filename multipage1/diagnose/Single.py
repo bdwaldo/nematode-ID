@@ -41,15 +41,13 @@ st.write(df)
 
 #name = [sample_submitter, sample_id, date]
 
-@st.cache
-def convert_df_to_csv(df):
-  return df.to_csv(index=False).encode("utf-8")
 
-csv_data = convert_df_to_csv(df)
 
-st.download_button(label='📥 Download Current Result',
-                   data=csv_data ,
-                   file_name= 'sample_1.csv',
-                   "text/csv",
-                   key="download-tools-csv",)
-
+data_as_csv= csv_data.to_csv(index=False).encode("utf-8")
+st.download_button(
+    "Download data as CSV", 
+    data_as_csv, 
+    "benchmark-tools.csv",
+    "text/csv",
+    key="download-tools-csv",
+)
