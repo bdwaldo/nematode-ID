@@ -34,6 +34,7 @@ df = {'Sample submitter': [sample_submitter],
       'Symptoms': [symptoms],
            }
 
+df = pd.DataFrame(data=df)
 
 name = [sample_submitter, sample_id, date]
 
