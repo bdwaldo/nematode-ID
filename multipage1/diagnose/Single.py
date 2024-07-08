@@ -43,11 +43,15 @@ st.write(df)
 
 
 
-data_as_csv= df.to_csv(index=False).encode("utf-8")
+@st.cache
+def convert_df_to_csv(df):
+  # IMPORTANT: Cache the conversion to prevent computation on every rerun
+  return df.to_csv().encode('utf-8')
+
+
 st.download_button(
-    "Download data as CSV", 
-    data_as_csv, 
-    "benchmark-tools.csv",
-    "text/csv",
-    key="download-tools-csv",
+  label="Download data as CSV",
+  data=convert_df_to_csv(df),
+  file_name='sample_info.csv',
+  mime='text/csv',
 )
