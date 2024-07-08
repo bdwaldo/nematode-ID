@@ -1,4 +1,5 @@
 import streamlit as st
+import csv
 
 
 with st.form("my_form"):
@@ -22,7 +23,7 @@ fields = [sample_submitter, sample_id, phone,
 
 name = [sample_submitter, sample_id, date]
 
-with open(name'.csv','a', newline='') as f:
+with open('sample_1.csv','a', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(fields)
 
