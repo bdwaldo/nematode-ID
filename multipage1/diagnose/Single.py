@@ -44,5 +44,5 @@ st.write(df)
 
 st.download_button(label='📥 Download Current Result',
                                 data=df ,
-                                file_name= 'sample_1.xlsx')
+                                file_name= 'sample_1.csv')
 
