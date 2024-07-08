@@ -1,6 +1,6 @@
 import streamlit as st
 import csv
-import pandas
+import pandas as pd
 
 
 with st.form("my_form"):
@@ -40,7 +40,7 @@ df = pd.DataFrame(data=df)
 #name = [sample_submitter, sample_id, date]
 
 
-st.download_button(label='📥 Download Current Result',
-                                data=df ,
-                                file_name= 'sample_1.xlsx')
+#st.download_button(label='📥 Download Current Result',
+#                                data=df ,
+#                                file_name= 'sample_1.xlsx')
 
