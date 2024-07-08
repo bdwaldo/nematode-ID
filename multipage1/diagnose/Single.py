@@ -36,7 +36,7 @@ df = {'Sample submitter': [sample_submitter],
 
 df = pd.DataFrame(data=df)
 
-name = [sample_submitter, sample_id, date]
+#name = [sample_submitter, sample_id, date]
 
 
 st.download_button(label='📥 Download Current Result',
