@@ -25,7 +25,7 @@ with st.form("my_form"):
 df = {'Sample submitter': [sample_submitter],
       'Sample ID': [sample_id],
       'Submitter Phone': [phone],
-      'Email': [email]
+      'Email': [email],
       'Date collected': [date],
       'State Sample Collected': [state],
       'Location': [location],
@@ -36,6 +36,8 @@ df = {'Sample submitter': [sample_submitter],
            }
 
 df = pd.DataFrame(data=df)
+
+st.write(df)
 
 #name = [sample_submitter, sample_id, date]
 
