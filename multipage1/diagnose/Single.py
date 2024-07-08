@@ -44,12 +44,13 @@ st.write(df)
 
 
 #convert df to binary
-dff = df.to_csv(index=False).encode('utf-8')
+csv_data = df.to_csv(index=False).encode('utf-8')
+csv_data=convert_df_to_csv(csv_data)
 
 
 st.download_button(
   label="Download data as CSV",
-  data=convert_df_to_csv(dff),
+  data = csv_data,
   file_name='sample_info.csv',
   mime='text/csv',
 )
