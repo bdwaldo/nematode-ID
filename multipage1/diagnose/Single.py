@@ -43,12 +43,13 @@ st.write(df)
 
 @st.cache
 def convert_df_to_csv(df):
-  return df.to_csv().encode('utf-8')
+  return df.to_csv(index=False).encode("utf-8")
 
 csv_data = convert_df_to_csv(df)
 
 st.download_button(label='📥 Download Current Result',
                    data=csv_data ,
                    file_name= 'sample_1.csv',
-                   mime='text/csv')
+                   "text/csv",
+                   key="download-tools-csv",)
 
