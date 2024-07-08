@@ -16,17 +16,14 @@ with st.form("my_form"):
   symptoms = st.selectbox('Symptoms', ["","none", "galling", "stunted roots", "wilting", "chlorosis", "other"])
   submitted = st.form_submit_button('Submit')
 
-df = {'Sample submitter': [sample_submitter],
-      'Sample ID': [sample_id],
-      'Submitter Phone': [phone],
-      'Email': [email]
-      'Date collected': [date],
-      'State Sample Collected': [state],
-      'Location': [location],
-      'Sample Type': [sample_type],
-      'Crop': [crop],
-      'Variety': [variety],
-      'Symptoms': [symptoms],
-           }
-df = df.append(pd.DataFrame(data=df))
-st.write(df)
+fields = [sample_submitter, sample_id, phone, 
+          email, date, state, location,
+          sample_type, crop, variety, symptoms]
+
+name = [sample_submitter, sample_id, date]
+
+with open(name'.csv','a', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(fields)
+
+
