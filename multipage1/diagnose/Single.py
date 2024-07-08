@@ -41,6 +41,10 @@ st.write(df)
 
 #name = [sample_submitter, sample_id, date]
 
+def convert_df_to_csv(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
+
 csv_data = convert_df_to_csv(df)
 
 st.download_button(label='📥 Download Current Result',
