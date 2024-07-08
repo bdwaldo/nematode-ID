@@ -17,9 +17,9 @@ with st.form("my_form"):
   symptoms = st.selectbox('Symptoms', ["","none", "galling", "stunted roots", "wilting", "chlorosis", "other"])
   submitted = st.form_submit_button('Submit')
 
-fields = [sample_submitter, sample_id, phone, 
-          email, date, state, location,
-          sample_type, crop, variety, symptoms]
+#fields = [sample_submitter, sample_id, phone, 
+#          email, date, state, location,
+#          sample_type, crop, variety, symptoms]
 
 df = {'Sample submitter': [sample_submitter],
       'Sample ID': [sample_id],
