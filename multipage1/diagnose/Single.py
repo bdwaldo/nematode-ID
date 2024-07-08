@@ -41,8 +41,9 @@ st.write(df)
 
 #name = [sample_submitter, sample_id, date]
 
+csv_data = convert_df_to_csv(df)
 
 st.download_button(label='📥 Download Current Result',
-                                data=df ,
+                                data=csv_data ,
                                 file_name= 'sample_1.csv')
 
