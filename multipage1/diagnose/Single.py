@@ -29,4 +29,4 @@ df = {'Sample submitter': [sample_submitter],
       'Symptoms': [symptoms],
            }
 df = df.append(pd.DataFrame(data=df))
-print(df)
+st.write(df)
