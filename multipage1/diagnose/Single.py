@@ -43,15 +43,13 @@ st.write(df)
 
 
 
-@st.cache
-def convert_df_to_csv(df):
-  # IMPORTANT: Cache the conversion to prevent computation on every rerun
-  return df.to_csv(index=False).encode('utf-8')
+#convert df to binary
+dff = df.to_csv(index=False).encode('utf-8')
 
 
 st.download_button(
   label="Download data as CSV",
-  data=convert_df_to_csv(df),
+  data=convert_df_to_csv(dff),
   file_name='sample_info.csv',
   mime='text/csv',
 )
