@@ -21,10 +21,24 @@ fields = [sample_submitter, sample_id, phone,
           email, date, state, location,
           sample_type, crop, variety, symptoms]
 
+df = {'Sample submitter': [sample_submitter],
+      'Sample ID': [sample_id],
+      'Submitter Phone': [phone],
+      'Email': [email]
+      'Date collected': [date],
+      'State Sample Collected': [state],
+      'Location': [location],
+      'Sample Type': [sample_type],
+      'Crop': [crop],
+      'Variety': [variety],
+      'Symptoms': [symptoms],
+           }
+
+
 name = [sample_submitter, sample_id, date]
 
 
 st.download_button(label='📥 Download Current Result',
-                                data=fields ,
+                                data=df ,
                                 file_name= 'sample_1.xlsx')
 
