@@ -44,7 +44,7 @@ st.write(df)
 
 
 #convert df to binary
-csv_data = df.to_csv(df).encode('utf-8')
+csv_data = df.to_csv(df, index = False).encode('utf-8')
 #csv_data=convert_df_to_csv(csv_data)
 
 
