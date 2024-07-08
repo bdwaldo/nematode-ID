@@ -44,8 +44,8 @@ st.write(df)
 
 
 #convert df to binary
-csv_data = df.to_csv(index=False).encode('utf-8')
-csv_data=convert_df_to_csv(csv_data)
+csv_data = df.to_csv(df).encode('utf-8')
+#csv_data=convert_df_to_csv(csv_data)
 
 
 st.download_button(
