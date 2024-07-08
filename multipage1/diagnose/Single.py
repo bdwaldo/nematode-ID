@@ -42,7 +42,7 @@ st.write(df)
 #name = [sample_submitter, sample_id, date]
 
 
-#st.download_button(label='📥 Download Current Result',
-#                                data=df ,
-#                                file_name= 'sample_1.xlsx')
+st.download_button(label='📥 Download Current Result',
+                                data=df ,
+                                file_name= 'sample_1.xlsx')
 
