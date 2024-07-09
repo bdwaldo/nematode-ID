@@ -12,9 +12,9 @@ with st.form("my_form"):
 
 edit_df = pd.DataFrame(
   [
-    sample_id = {"Sample ID": ""},
-    state = {"State sample collected": ""},
-    location = {"Location identifier": "", "", "", "", "", "", "", "", "", ""},
+    {"Sample ID": ""},
+    {"State sample collected": ""},
+    {"Location identifier": "", "", "", "", "", "", "", "", "", ""},
     sample_type = {"Sample Type": "", "", "", "", "", "", "", "", "", ""},
     crop = {"Crop": "", "", "", "", "", "", "", "", "", ""},
     variety = {"Variety": "", "", "", "", "", "", "", "", "", ""},
