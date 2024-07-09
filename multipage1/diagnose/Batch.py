@@ -73,17 +73,17 @@ with col1:
 #################################################
 #convert data frame to csv and download
 #https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
-with col2: 
-@st.cache_data #iportant so doesn't rerun each time
-def convert_df(df3):
-  return df3.to_csv(index=False).encode('utf-8')
-csv_file = convert_df(df)
-st.download_button(
-  label = "Download CSV",
-  data = csv_file,
-  file_name = (f"{name}.csv"),
-  mime = "text/csv",
-  key='download-csv'
+with col2:
+  @st.cache_data #iportant so doesn't rerun each time
+  def convert_df(df3):
+    return df3.to_csv(index=False).encode('utf-8')
+ csv_file = convert_df(df)
+ st.download_button(
+   label = "Download CSV",
+   data = csv_file,
+   file_name = (f"{name}.csv"),
+   mime = "text/csv",
+   key='download-csv'
 )
 
 
