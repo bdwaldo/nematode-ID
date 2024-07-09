@@ -2,12 +2,13 @@ import streamlit as st
 import csv
 import pandas as pd
 
+#dictionary for editable portion of form
 edit_df = pd.DataFrame(
   [
     {"Sample ID": ""},
     {"State sample collected": ""},
     {"Location identifier": ""},
-    {"Sample Type": ""},
+    {"Sample type": ""},
     {"Crop": ""},
     {"Variety": ""},
     {"Symptoms": ""}
@@ -30,17 +31,26 @@ df = {'Sample submitter': [submitter],
      }
 
 
+##############################
+#AI generated code
+# Initialize a list to store form submissions
+@st.cache(allow_output_mutation=True)
+def Pageviews():
+    return []
 
+pageviews = Pageviews()
 
+# Append a dummy value to the list when the form is submitted
+pageviews.append('dummy')
 
+# Now the length of the list represents the number of form submissions
+number_of_submissions = len(pageviews)
 
+#st.write(f"Number of form submissions: {number_of_submissions}")
 
-
-
-#st.write(st.data_editor(edit_df, num_rows = "dynamic"))
-         
-#print input on screen
-#st.write(df)
+#set f string to assign sample name
+name = (f"Nematode-ID: NI{number_of_submissions}_{date}_{submitter}")
+st.write(name)
 
 
 
