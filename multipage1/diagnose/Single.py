@@ -49,9 +49,9 @@ df = pd.DataFrame(data=df)
 
 
 
-@st.cache
-def convert_df_to_csv(df):
-  return df.to_csv().encode('utf-8')
+@st.cache_data
+def convert_df(df):
+   return df.to_csv(index=False).encode('utf-8')
 
 csv = convert_df(df)
 
