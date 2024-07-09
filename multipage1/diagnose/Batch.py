@@ -77,13 +77,13 @@ with col2:
   @st.cache_data #iportant so doesn't rerun each time
   def convert_df(df3):
     return df3.to_csv(index=False).encode('utf-8')
- csv_file = convert_df(df)
- st.download_button(
-   label = "Download CSV",
-   data = csv_file,
-   file_name = (f"{name}.csv"),
-   mime = "text/csv",
-   key='download-csv'
+  csv_file = convert_df(df)
+  st.download_button(
+    label = "Download CSV",
+    data = csv_file,
+    file_name = (f"{name}.csv"),
+    mime = "text/csv",
+    key='download-csv'
 )
 
 
