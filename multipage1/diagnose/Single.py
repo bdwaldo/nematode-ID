@@ -73,7 +73,7 @@ csv_file = convert_df(df)
 st.download_button(
    label = "Press to Download",
    data = csv_file,
-   file_name = (f"{name}.csv),
+   file_name = (f"{name}.csv"),
    mime = "text/csv",
    key='download-csv'
 )
