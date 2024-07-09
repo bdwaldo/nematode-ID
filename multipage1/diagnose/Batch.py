@@ -14,11 +14,11 @@ edit_df = pd.DataFrame(
   [
     {"Sample ID": ""},
     {"State sample collected": ""},
-    {"Location identifier": "", "", "", "", "", "", "", "", "", ""},
-    sample_type = {"Sample Type": "", "", "", "", "", "", "", "", "", ""},
-    crop = {"Crop": "", "", "", "", "", "", "", "", "", ""},
-    variety = {"Variety": "", "", "", "", "", "", "", "", "", ""},
-    symptoms = {"Symptoms": "", "", "", "", "", "", "", "", "", ""}
+    {"Location identifier": ""},
+    {"Sample Type": ""},
+    {"Crop": ""},
+    {"Variety": ""},
+    {"Symptoms": ""}
   ]
 )
 
