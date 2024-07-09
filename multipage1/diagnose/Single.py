@@ -35,7 +35,7 @@ df = {'Sample submitter': [sample_submitter],
       'Symptoms': [symptoms],
            }
 
-#df = pd.DataFrame(data=df)
+df = pd.DataFrame(data=df)
 
 #st.write(df)
 
