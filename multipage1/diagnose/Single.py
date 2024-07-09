@@ -63,6 +63,9 @@ number_of_submissions = len(pageviews)
 name = (f"{number_of_submissions}_{date}_{submitter}_{sample_id}")
 st.write(name)
 
+
+#################################################
+#convert data frame to csv and download
 #https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
 @st.cache_data #iportant so doesn't rerun each time
 def convert_df(df):
