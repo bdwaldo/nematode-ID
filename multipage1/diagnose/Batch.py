@@ -28,22 +28,16 @@ edit_df = pd.DataFrame(
 
 
 df = {'Sample submitter': [submitter],
-      'Sample ID': [sample_id],
       'Submitter Phone': [phone],
       'Email': [email],
-      'Date collected': [date],
-      'State Sample Collected': [state],
-      'Location': [location],
-      'Sample Type': [sample_type],
-      'Crop': [crop],
-      'Variety': [variety],
-      'Symptoms': [symptoms],
-           }
+      'Date collected': [date]
+     }
 
-#convert data into pandas data frame
-#df = pd.DataFrame(data=df)
 
-st.write(st.data_editor(edit_df, num_rows = "dynamic"))
+st.write(st.data_editor(edit_df, num_rows = "dynamic")
+
+df.append(edit_df)
+         
 #print input on screen
 #st.write(df)
 
