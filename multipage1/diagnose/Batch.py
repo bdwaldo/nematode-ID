@@ -9,12 +9,7 @@ with st.form("my_form"):
   phone = st.text_input("Submitter phone number")
   email = st.text_input("Submitter email address")
   date = st.date_input("Date sample collected", format="MM.DD.YYYY")
-  submitted = st.form_submit_button('Submit')
-
-
-
-
-edit_df = pd.DataFrame(
+  edit_df = pd.DataFrame(
   [
     {"Sample ID": ""},
     {"State sample collected": ""},
@@ -25,7 +20,7 @@ edit_df = pd.DataFrame(
     {"Symptoms": ""}
   ]
 )
-
+  submitted = st.form_submit_button('Submit')
 
 df = {'Sample submitter': [submitter],
       'Submitter Phone': [phone],
@@ -34,9 +29,14 @@ df = {'Sample submitter': [submitter],
      }
 
 
-st.write(st.data_editor(edit_df, num_rows = "dynamic"))
 
-df.append(edit_df)
+
+
+
+
+
+
+#st.write(st.data_editor(edit_df, num_rows = "dynamic"))
          
 #print input on screen
 #st.write(df)
