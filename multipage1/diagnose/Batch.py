@@ -30,7 +30,10 @@ df = {'Sample submitter': [submitter],
       'Date collected': [date]
      }
 
-st.write(pd.DataFrame(data=ed))
 
+#convert data into pandas data frame
+df = pd.DataFrame(data=df)
+df2 = pd.DataFrame(data=ed)
+dd = df.append(df2, ignore_index=True)
 
-
+st.write(dd)
