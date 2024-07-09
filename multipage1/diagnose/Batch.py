@@ -12,13 +12,13 @@ with st.form("my_form"):
 
 edit_df = pd.DataFrame(
   [
-    sample_id = {"Sample ID": "", "", "", "", "", "", "", "", "", "",},
-    state = {"State sample collected": "", "", "", "", "", "", "", "", "", "",},
-    location = {"Location identifier": "", "", "", "", "", "", "", "", "", "",},
-    sample_type = {"Sample Type": "", "", "", "", "", "", "", "", "", "",},
-    crop = {"Crop": "", "", "", "", "", "", "", "", "", "",},
-    variety = {"Variety": "", "", "", "", "", "", "", "", "", "",},
-    symptoms = {"Symptoms": "", "", "", "", "", "", "", "", "", "",}
+    sample_id = {"Sample ID": ""},
+    state = {"State sample collected": ""},
+    location = {"Location identifier": "", "", "", "", "", "", "", "", "", ""},
+    sample_type = {"Sample Type": "", "", "", "", "", "", "", "", "", ""},
+    crop = {"Crop": "", "", "", "", "", "", "", "", "", ""},
+    variety = {"Variety": "", "", "", "", "", "", "", "", "", ""},
+    symptoms = {"Symptoms": "", "", "", "", "", "", "", "", "", ""}
   ]
 )
 
@@ -47,8 +47,6 @@ df = pd.DataFrame(data=df)
 st.write(st.data_editor(edit_df, num_rows = "dynamic"))
 #print input on screen
 #st.write(df)
-
-
 
 
 
