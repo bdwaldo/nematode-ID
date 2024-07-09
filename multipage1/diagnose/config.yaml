@@ -1,22 +1,18 @@
 #credentials for Login.py
 credentials:
   usernames:
-    bjones:
-      email: bob@gmail.com
-      failed_login_attempts: 0 # Will be managed automatically
-      logged_in: False # Will be managed automatically
-      name: Bob Jones
-      password: abc # Will be hashed automatically
     jsmith:
-      email: jane@gmail.com
-      failed_login_attempts: 0 # Will be managed automatically
-      logged_in: False # Will be managed automatically
-      name: Jane Smith
-      password: def # Will be hashed automatically
+      email: jsmith@gmail.com
+      name: John Smith
+      password: abc # To be replaced with hashed password
+    rbriggs:
+      email: rbriggs@gmail.com
+      name: Rebecca Briggs
+      password: def # To be replaced with hashed password
 cookie:
-  expiry_days: 2
-  key: some_signature_key # Must be string
-  name: some_cookie_name
-pre-authorized:
+  expiry_days: 30
+  key: random_signature_key # Must be string
+  name: random_cookie_name
+preauthorized:
   emails:
-  - bw@gmail.com
+  - melsby@gmail.com
