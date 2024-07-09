@@ -4,7 +4,7 @@ import pandas as pd
 
 
 with st.form("my_form"):
-  st.write("Sample Information")
+  st.write("Sample Submission Information")
   submitter = st.text_input("Submitter name")
   phone = st.text_input("Submitter phone number")
   email = st.text_input("Submitter email address")
