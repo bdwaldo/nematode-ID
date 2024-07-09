@@ -37,7 +37,7 @@ df = {'Sample submitter': [sample_submitter],
 
 #df = pd.DataFrame(data=df)
 
-st.write(df)
+#st.write(df)
 
 #name = [sample_submitter, sample_id, date]
 
