@@ -9,14 +9,19 @@ with st.form("my_form"):
   phone = st.text_input("Submitter phone number")
   email = st.text_input("Submitter email address")
   date = st.date_input("Date sample collected", format="MM.DD.YYYY")
-  sample_id = st.text_input("Sample ID")
-  state = st.text_input("State sample collected")
-  location = st.text_input("Location identifier (field, green...etc)") 
-  sample_type = st.selectbox('Sample Type', ["","soil", "roots", "leaves"])
-  crop = st.text_input("Crop")
-  variety = st.text_input("Variety")
-  symptoms = st.selectbox('Symptoms', ["","none", "galling", "stunted roots", "wilting", "chlorosis", "other"])
-  submitted = st.form_submit_button('Submit')
+
+edit_df = pd.DataFrame(
+  [
+    sample_id = {"Sample ID": "", "", "", "", "", "", "", "", "", "",},
+    state = {"State sample collected": "", "", "", "", "", "", "", "", "", "",},
+    location = {"Location identifier": "", "", "", "", "", "", "", "", "", "",},
+    sample_type = {"Sample Type": "", "", "", "", "", "", "", "", "", "",},
+    crop = {"Crop": "", "", "", "", "", "", "", "", "", "",},
+    variety = {"Variety": "", "", "", "", "", "", "", "", "", "",},
+    symptoms = {"Symptoms": "", "", "", "", "", "", "", "", "", "",}
+  ]
+)
+
 
 #fields = [sample_submitter, sample_id, phone, 
 #          email, date, state, location,
@@ -39,100 +44,11 @@ df = {'Sample submitter': [submitter],
 #convert data into pandas data frame
 df = pd.DataFrame(data=df)
 
-st.write(st.data_editor(df, num_rows = "dynamic"))
+st.write(st.data_editor(edit_df, num_rows = "dynamic"))
 #print input on screen
 #st.write(df)
 
 
-
-
-
-##############################
-#AI generated code
-# Initialize a list to store form submissions
-@st.cache(allow_output_mutation=True)
-def Pageviews():
-    return []
-
-pageviews = Pageviews()
-
-# Append a dummy value to the list when the form is submitted
-pageviews.append('dummy')
-
-# Now the length of the list represents the number of form submissions
-number_of_submissions = len(pageviews)
-
-#st.write(f"Number of form submissions: {number_of_submissions}")
-
-#set f string to assign sample name
-name = (f"Nematode-ID: NI{number_of_submissions}_{date}_{submitter}_{sample_id}")
-st.write(name)
-
-
-#################################################
-#convert data frame to csv and download
-#https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
-@st.cache_data #iportant so doesn't rerun each time
-def convert_df(df):
-   return df.to_csv(index=False).encode('utf-8')
-
-csv_file = convert_df(df)
-
-st.download_button(
-   label = "Press to Download",
-   data = csv_file,
-   file_name = (f"{name}.csv"),
-   mime = "text/csv",
-   key='download-csv'
-)
-
-
-
-#convert data into pandas data frame
-df = pd.DataFrame(data=df)
-
-#print input on screen
-#st.write(df)
-
-
-##############################
-#AI generated code
-# Initialize a list to store form submissions
-@st.cache(allow_output_mutation=True)
-def Pageviews():
-    return []
-
-pageviews = Pageviews()
-
-# Append a dummy value to the list when the form is submitted
-pageviews.append('dummy')
-
-# Now the length of the list represents the number of form submissions
-number_of_submissions = len(pageviews)
-
-#st.write(f"Number of form submissions: {number_of_submissions}")
-
-#set f string to assign sample name
-name = (f"Nematode-ID: NI{number_of_submissions}_{date}_{submitter}_{sample_id}")
-st.write(name)
-
-
-#################################################
-#convert data frame to csv and download
-#https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
-@st.cache_data #iportant so doesn't rerun each time
-def convert_df(df):
-   return df.to_csv(index=False).encode('utf-8')
-
-csv_file = convert_df(df)
-
-st.download_button(
-   label = "Press to Download",
-   data = csv_file,
-   file_name = (f"{name}.csv"),
-   mime = "text/csv",
-   key='download-csv'
-)
 
 
 
