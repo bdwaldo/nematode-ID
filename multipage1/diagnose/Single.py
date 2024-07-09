@@ -1,4 +1,4 @@
-import streamlit as st
+-import streamlit as st
 import csv
 import pandas as pd
 
@@ -60,7 +60,7 @@ number_of_submissions = len(pageviews)
 #st.write(f"Number of form submissions: {number_of_submissions}")
 
 #set f string to assign sample name
-name = (f"ID{number_of_submissions}_{date}_{submitter}_{sample_id}")
+name = (f"Nematode-ID: NI{number_of_submissions}_{date}_{submitter}_{sample_id}")
 st.write(name)
 
 
