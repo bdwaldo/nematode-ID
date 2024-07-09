@@ -27,54 +27,10 @@ with st.form("my_form"):
 df = {'Sample submitter': [submitter],
       'Submitter Phone': [phone],
       'Email': [email],
-      'Date collected': [date],
-      'Edited': [ed]
+      'Date collected': [date]
      }
 
-#convert data into pandas data frame
-df = pd.DataFrame(data=df)
-
-
-##############################
-#AI generated code
-# Initialize a list to store form submissions
-@st.cache(allow_output_mutation=True)
-def Pageviews():
-    return []
-
-pageviews = Pageviews()
-
-# Append a dummy value to the list when the form is submitted
-pageviews.append('dummy')
-
-# Now the length of the list represents the number of form submissions
-number_of_submissions = len(pageviews)
-
-#st.write(f"Number of form submissions: {number_of_submissions}")
-
-#set f string to assign sample name
-name = (f"Nematode-ID: NI{number_of_submissions}_{date}_{submitter}")
-st.write(name)
-
-
-
-#################################################
-#convert data frame to csv and download
-#https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
-@st.cache_data #iportant so doesn't rerun each time
-def convert_df(df):
-   return df.to_csv(index=False).encode('utf-8')
-
-csv_file = convert_df(df)
-
-st.download_button(
-   label = "Press to Download",
-   data = csv_file,
-   file_name = (f"{name}.csv"),
-   mime = "text/csv",
-   key='download-csv'
-)
-
+st.write(pd.DataFrame(data=ed))
 
 
 
