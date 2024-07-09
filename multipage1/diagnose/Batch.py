@@ -22,18 +22,7 @@ edit_df = pd.DataFrame(
 #          email, date, state, location,
 #          sample_type, crop, variety, symptoms]
 
-df = {'Sample submitter': [submitter],
-      'Sample ID': [sample_id],
-      'Submitter Phone': [phone],
-      'Email': [email],
-      'Date collected': [date],
-      'State Sample Collected': [state],
-      'Location': [location],
-      'Sample Type': [sample_type],
-      'Crop': [crop],
-      'Variety': [variety],
-      'Symptoms': [symptoms],
-           }
+
 
 
 #convert data into pandas data frame
