@@ -30,6 +30,8 @@ df = {'Sample submitter': [submitter],
       'Date collected': [date]
      }
 
+#convert data into pandas data frame
+df = pd.DataFrame(data=df)
 
 ##############################
 #AI generated code
