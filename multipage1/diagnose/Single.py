@@ -5,7 +5,7 @@ import pandas as pd
 
 with st.form("my_form"):
   st.write("Sample Information")
-  sample_submitter = st.text_input("Submitter name")
+  submitter = st.text_input("Submitter name")
   phone = st.text_input("Submitter phone number")
   email = st.text_input("Submitter email address")
   sample_id = st.text_input("Sample ID")
@@ -22,7 +22,7 @@ with st.form("my_form"):
 #          email, date, state, location,
 #          sample_type, crop, variety, symptoms]
 
-df = {'Sample submitter': [sample_submitter],
+df = {'Sample submitter': [submitter],
       'Sample ID': [sample_id],
       'Submitter Phone': [phone],
       'Email': [email],
