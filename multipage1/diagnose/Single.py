@@ -41,7 +41,25 @@ df = pd.DataFrame(data=df)
 #print input on screen
 #st.write(df)
 
-name = (f"{date}_{submitter}_{sample_id}")
+
+##############################
+#AI generated code
+# Initialize a list to store form submissions
+@st.cache(allow_output_mutation=True)
+def Pageviews():
+    return []
+
+pageviews = Pageviews()
+
+# Append a dummy value to the list when the form is submitted
+pageviews.append('dummy')
+
+# Now the length of the list represents the number of form submissions
+number_of_submissions = len(pageviews)
+
+#st.write(f"Number of form submissions: {number_of_submissions}")
+
+name = (f"{number_of_submissions}_{date}_{submitter}_{sample_id}")
 st.write(name)
 
 #https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
@@ -61,17 +79,3 @@ st.download_button(
 )
 
 
-# Initialize a list to store form submissions
-@st.cache(allow_output_mutation=True)
-def Pageviews():
-    return []
-
-pageviews = Pageviews()
-
-# Append a dummy value to the list when the form is submitted
-pageviews.append('dummy')
-
-# Now the length of the list represents the number of form submissions
-number_of_submissions = len(pageviews)
-
-st.write(f"Number of form submissions: {number_of_submissions}")
