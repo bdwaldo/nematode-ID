@@ -1,0 +1,21 @@
+credentials:
+  usernames:
+    bjones:
+      email: bob@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      logged_in: False # Will be managed automatically
+      name: Bob Jones
+      password: abc # Will be hashed automatically
+    jsmith:
+      email: jane@gmail.com
+      failed_login_attempts: 0 # Will be managed automatically
+      logged_in: False # Will be managed automatically
+      name: Jane Smith
+      password: def # Will be hashed automatically
+cookie:
+  expiry_days: 2
+  key: some_signature_key # Must be string
+  name: some_cookie_name
+pre-authorized:
+  emails:
+  - bw@gmail.com
