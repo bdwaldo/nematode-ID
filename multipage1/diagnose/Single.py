@@ -44,13 +44,24 @@ df = pd.DataFrame(data=df)
 
 #look up "convert pandas data frame to csv streamlit"
 #convert df to binary
-csv_data = df.to_csv(df, index = False).encode('utf-8')
+#csv_data = df.to_csv(df, index = False).encode('utf-8')
 #csv_data=convert_df_to_csv(df)
-st.write(csv_data)
+
+
+
+@st.cache
+def convert_df_to_csv(df):
+# IMPORTANT: Cache the conversion to prevent computation on every rerun
+return df.to_csv().encode('utf-8')
+
+csv = convert_df(df)
 
 st.download_button(
-  label="Download data as CSV",
-  data = csv_data,
-  file_name='sample_info.csv',
-  mime='text/csv',
+   label = "Press to Download",
+   data = csv,
+   file_name = "file.csv",
+   mime = "text/csv",
+   key='download-csv'
 )
+
+
