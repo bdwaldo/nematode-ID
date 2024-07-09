@@ -1,4 +1,4 @@
-import streamlit as st
+dimport streamlit as st
 import csv
 import pandas as pd
 
@@ -21,17 +21,19 @@ with st.form("my_form"):
   phone = st.text_input("Submitter phone number")
   email = st.text_input("Submitter email address")
   date = st.date_input("Date sample collected", format="MM.DD.YYYY")
-  st.data_editor(edit_df, num_rows = "dynamic")
+  ed = st.data_editor(edit_df, num_rows = "dynamic")
   submitted = st.form_submit_button('Submit')
 
 df = {'Sample submitter': [submitter],
       'Submitter Phone': [phone],
       'Email': [email],
-      'Date collected': [date]
+      'Date collected': [date],
+      'Edited': [ed]
      }
 
 #convert data into pandas data frame
 df = pd.DataFrame(data=df)
+
 
 ##############################
 #AI generated code
