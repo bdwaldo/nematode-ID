@@ -34,6 +34,6 @@ df = {'Sample submitter': [submitter],
 #convert data into pandas data frame
 df = pd.DataFrame(data=df)
 df2 = pd.DataFrame(data=ed)
-dd = df.concat(df2, ignore_index=True)
+dd = pd.concat([df, df2])
 
 st.write(dd)
