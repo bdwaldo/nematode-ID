@@ -3,12 +3,7 @@ import csv
 import pandas as pd
 
 
-with st.form("my_form"):
-  st.write("Sample Information")
-  submitter = st.text_input("Submitter name")
-  phone = st.text_input("Submitter phone number")
-  email = st.text_input("Submitter email address")
-  date = st.date_input("Date sample collected", format="MM.DD.YYYY")
+
 
 edit_df = pd.DataFrame(
   [
