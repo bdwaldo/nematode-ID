@@ -34,7 +34,7 @@ df = {'Sample submitter': [submitter],
      }
 
 
-st.write(st.data_editor(edit_df, num_rows = "dynamic")
+st.write(st.data_editor(edit_df, num_rows = "dynamic"))
 
 df.append(edit_df)
          
