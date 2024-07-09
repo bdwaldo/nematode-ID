@@ -59,6 +59,7 @@ number_of_submissions = len(pageviews)
 
 #st.write(f"Number of form submissions: {number_of_submissions}")
 
+#set f string to assign sample name
 name = (f"{number_of_submissions}_{date}_{submitter}_{sample_id}")
 st.write(name)
 
@@ -67,13 +68,12 @@ st.write(name)
 def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
-
 csv_file = convert_df(df)
 
 st.download_button(
    label = "Press to Download",
    data = csv_file,
-   file_name = "file.csv",
+   file_name = (f"{name}.csv),
    mime = "text/csv",
    key='download-csv'
 )
