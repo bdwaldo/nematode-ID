@@ -9,7 +9,7 @@ with st.form("my_form"):
   phone = st.text_input("Submitter phone number")
   email = st.text_input("Submitter email address")
   date = st.date_input("Date sample collected", format="MM.DD.YYYY")
-  sample_ids = st.data_editor("Sample identifiers"
+  sample_ids = st.data_editor("Sample identifiers")
   sample_id = st.text_input("Sample ID")
   state = st.text_input("State sample collected")
   location = st.text_input("Location identifier (field, green...etc)") 
