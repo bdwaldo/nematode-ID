@@ -54,3 +54,23 @@ st.write(name)
 
 
 
+#################################################
+#convert data frame to csv and download
+#https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
+@st.cache_data #iportant so doesn't rerun each time
+def convert_df(df):
+   return df.to_csv(index=False).encode('utf-8')
+
+csv_file = convert_df(df)
+
+st.download_button(
+   label = "Press to Download",
+   data = csv_file,
+   file_name = (f"{name}.csv"),
+   mime = "text/csv",
+   key='download-csv'
+)
+
+
+
+
