@@ -65,7 +65,7 @@ st.write(name)
 #https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
 @st.cache_data #iportant so doesn't rerun each time
 def convert_df(df3):
-   return df.to_csv(index=False).encode('utf-8')
+   return df3.to_csv(index=False).encode('utf-8')
 
 csv_file = convert_df(df)
 
