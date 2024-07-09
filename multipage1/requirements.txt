@@ -4,4 +4,4 @@ opencv-python-headless
 tensorflow==2.12.0
 matplotlib
 streamlit_authenticator
-yaml
+pyyaml
