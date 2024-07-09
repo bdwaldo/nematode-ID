@@ -59,7 +59,10 @@ name = (f"Nematode-ID: NI{number_of_submissions}_{date}_{submitter}")
 st.write(name)
 
 
-
+#See summary of sample info
+if st.button('Summary'):
+  st.write(df3)
+  
 #################################################
 #convert data frame to csv and download
 #https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
@@ -70,16 +73,14 @@ def convert_df(df3):
 csv_file = convert_df(df)
 
 st.download_button(
-   label = "Press to Download",
+   label = "Download CSV",
    data = csv_file,
    file_name = (f"{name}.csv"),
    mime = "text/csv",
    key='download-csv'
 )
 
-#See summary of sample info
-if st.button('Summary'):
-  st.write(df3)
+
 
 
 
