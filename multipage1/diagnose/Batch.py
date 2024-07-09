@@ -75,7 +75,7 @@ df = {'Sample submitter': [submitter],
 #convert data into pandas data frame
 df = pd.DataFrame(data=df)
 
-st.write(st.data_editor(df, num_rows = "dynamic")
+st.write(st.data_editor(df, num_rows = "dynamic"))
 #print input on screen
 #st.write(df)
 
