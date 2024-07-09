@@ -1,4 +1,4 @@
-dimport streamlit as st
+import streamlit as st
 import csv
 import pandas as pd
 
