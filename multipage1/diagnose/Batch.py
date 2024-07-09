@@ -9,6 +9,7 @@ with st.form("my_form"):
   phone = st.text_input("Submitter phone number")
   email = st.text_input("Submitter email address")
   date = st.date_input("Date sample collected", format="MM.DD.YYYY")
+  submitted = st.form_submit_button('Submit')
 
 
 
