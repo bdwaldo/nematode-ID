@@ -36,10 +36,6 @@ df = pd.DataFrame(data=df)
 df2 = pd.DataFrame(data=ed)
 df3 = pd.concat([df, df2])
 
-#See summary of sample info
-if st.button('Summary'):
-  st.write(df3)
-
 
 ##############################
 #AI generated code
@@ -81,6 +77,9 @@ st.download_button(
    key='download-csv'
 )
 
+#See summary of sample info
+if st.button('Summary'):
+  st.write(df3)
 
 
 
