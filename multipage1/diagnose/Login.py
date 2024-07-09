@@ -6,7 +6,7 @@ import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
 
-with open('./config/auth.yaml') as file:
+with open('multipage1/diagnose/config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 st.write(config) # DEBUG 1
 
@@ -37,5 +37,5 @@ elif st.session_state["authentication_status"]:
         st.error(e)
     st.write(config) # DEBUG 2
     st.write(st.session_state) # DEBUG 3
-    with open('./config/auth.yaml', 'w') as file:
+    with open('multipage1/diagnose/config.yaml', 'w') as file:
         yaml.dump(config, file, default_flow_style=False)
