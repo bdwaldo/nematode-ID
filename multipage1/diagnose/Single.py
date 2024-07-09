@@ -44,9 +44,9 @@ df = pd.DataFrame(data=df)
 
 #look up "convert pandas data frame to csv streamlit"
 #convert df to binary
-#csv_data = df.to_csv(df, index = False).encode('utf-8')
-csv_data=convert_df_to_csv(df)
-
+csv_data = df.to_csv(df, index = False).encode('utf-8')
+#csv_data=convert_df_to_csv(df)
+st.write(csv_data)
 
 st.download_button(
   label="Download data as CSV",
