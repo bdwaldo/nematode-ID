@@ -26,7 +26,7 @@ edit_df = pd.DataFrame(
 
 
 #convert data into pandas data frame
-df = pd.DataFrame(data=df)
+#df = pd.DataFrame(data=df)
 
 st.write(st.data_editor(edit_df, num_rows = "dynamic"))
 #print input on screen
