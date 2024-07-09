@@ -5,11 +5,11 @@ import pandas as pd
 
 with st.form("my_form"):
   st.write("Sample Information")
-  sample_submitter = st.text_input("Sample submitter")
+  sample_submitter = st.text_input("Submitter name")
   phone = st.text_input("Submitter phone number")
   email = st.text_input("Submitter email address")
   sample_id = st.text_input("Sample ID")
-  date = st.date_input("Date sample collected")
+  date = st.date_input("Date sample collected", format="MM.DD.YYYY")
   state = st.text_input("State sample collected")
   location = st.text_input("Location identifier (field, green...etc)") 
   sample_type = st.selectbox('Sample Type', ["","soil", "roots", "leaves"])
@@ -35,29 +35,26 @@ df = {'Sample submitter': [sample_submitter],
       'Symptoms': [symptoms],
            }
 
+#convert data into pandas data frame
 df = pd.DataFrame(data=df)
 
+#print input on screen
 #st.write(df)
 
-#name = [sample_submitter, sample_id, date]
+name = (f"{date}_{submitter}_{sample_id}.")
+st.write(name)
 
-
-#look up "convert pandas data frame to csv streamlit"
-#convert df to binary
-#csv_data = df.to_csv(df, index = False).encode('utf-8')
-#csv_data=convert_df_to_csv(df)
-
-
-
-@st.cache_data
+#https://docs.streamlit.io/knowledge-base/using-streamlit/how-download-pandas-dataframe-csv
+@st.cache_data #iportant so doesn't rerun each time
 def convert_df(df):
    return df.to_csv(index=False).encode('utf-8')
 
-csv = convert_df(df)
+
+csv_file = convert_df(df)
 
 st.download_button(
    label = "Press to Download",
-   data = csv,
+   data = csv_file,
    file_name = "file.csv",
    mime = "text/csv",
    key='download-csv'
