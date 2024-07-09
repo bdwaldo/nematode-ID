@@ -60,7 +60,7 @@ number_of_submissions = len(pageviews)
 #st.write(f"Number of form submissions: {number_of_submissions}")
 
 #set f string to assign sample name
-name = (f"{number_of_submissions}_{date}_{submitter}_{sample_id}")
+name = (f"ID{number_of_submissions}_{date}_{submitter}_{sample_id}")
 st.write(name)
 
 
