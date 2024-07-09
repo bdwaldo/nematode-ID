@@ -36,10 +36,7 @@ df = pd.DataFrame(data=df)
 df2 = pd.DataFrame(data=ed)
 df3 = pd.concat([df, df2])
 
-def print_summary():
-   st.write(df3)
- 
-button = st.button('Summary')
-button.on_click(print_summary)
+if st.button('Summary'):
+  st.write(df3)
 
 
