@@ -1,46 +1,41 @@
 #login page
 #https://pypi.org/project/streamlit-authenticator/
-
-import streamlit as st
-import streamlit_authenticator as sa
   
-auth = sa.Authenticator(
-    SECRET_KEY,
-    token_url="/token",
-    token_ttl=3600,
-    password_hashing_method=sa.PasswordHashingMethod.BCRYPT,
+import streamlit as st
+import streamlit_authenticator as stauth
+import yaml
+from yaml.loader import SafeLoader
+
+with open('./config/auth.yaml') as file:
+    config = yaml.load(file, Loader=SafeLoader)
+st.write(config) # DEBUG 1
+
+authenticator = stauth.Authenticate(
+    config['credentials'],
+    config['cookie']['name'],
+    config['cookie']['key'],
+    config['cookie']['expiry_days'],
+    config['pre-authorized']
 )
+authenticator.login()
 
+if "authenticator" not in st.session_state:
+    st.session_state["authenticator"] = authenticator
 
-@auth.login_required
-def protected():
-    st.write("This is a protected route.")
+if st.session_state["authentication_status"] == False:
+    st.error("Wrong username or password")
+elif st.session_state["authentication_status"] == None:
+    st.warning("Please insert your credentials")
+elif st.session_state["authentication_status"]: 
+    if "loggedIn" not in st.session_state:
+        st.session_state["loggedIn"] = True
 
-
-
-@st.route("/login")
-def login():
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
- 
-    if st.button("Login"):
-        user = auth.authenticate(username, password)
-        if user is not None:
-            auth.login_user(user)
-            st.success("Logged in successfully.")
-        else:
-            st.error("Invalid username or password.")
-
-
-
-## .streamlit/secrets.toml
-password = "streamlit123"
-
-
-
-password = st.text_input("Password", type="password")
- 
-if password == st.secrets["password"]:
-    st.success("Access granted.")
-else:
-    st.error("Access denied.")
+    try:
+        if st.session_state["authenticator"].reset_password(st.session_state["username"]): 
+            st.success('Password modified successfully')      
+    except Exception as e:    
+        st.error(e)
+    st.write(config) # DEBUG 2
+    st.write(st.session_state) # DEBUG 3
+    with open('./config/auth.yaml', 'w') as file:
+        yaml.dump(config, file, default_flow_style=False)
