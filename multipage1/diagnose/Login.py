@@ -13,28 +13,26 @@ def sign_up():
     password1 = st.text_input('Password', placeholder='Enter your password')
     password2 = st.text_input('Confirm Password', placeholder='Confirm password')
   
-
-
-   if email:
-     if validate_email(email):
-       if email not in get_user_emails():
-         if validate_username(username):
-           if username not in get_usernames():
-             if password1 == password2:
-               hashed_password = stauth.Hasher([password2]).generate #add user to database
-               insert_user(email, username, hashed_password[0])
-               st.success('Account created successfully')
-             else:
-               st.warning('Passwords do not match')
-           else:
-             st.warning('Username Already Exists')
-         else:
-           st.warning('Invalid Username')
-       else:
-         st.warning('Invalid Email')
+    if email:
+      if validate_email(email):
+        if email not in get_user_emails():
+          if validate_username(username):
+            if username not in get_usernames():
+              if password1 == password2:
+                hashed_password = stauth.Hasher([password2]).generate #add user to database
+                insert_user(email, username, hashed_password[0])
+                st.success('Account created successfully')
+              else:
+                st.warning('Passwords do not match')
+            else:
+              st.warning('Username Already Exists')
+          else:
+            st.warning('Invalid Username')
+        else:
+          st.warning('Invalid Email')
   st.form_submit_button('Sign Up')  
 
-sign_up()
+#sign_up()
 
                    
                    
