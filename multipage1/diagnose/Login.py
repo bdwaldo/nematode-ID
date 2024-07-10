@@ -3,39 +3,7 @@
   
 import streamlit as st
 import streamlit_authenticator as stauth
-import yaml
-from yaml.loader import SafeLoader
 
-with open('multipage1/diagnose/config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-st.write(config) # DEBUG 1
-
-authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized']
-)
-authenticator.login()
-
-if "authenticator" not in st.session_state:
-    st.session_state["authenticator"] = authenticator
-
-if st.session_state["authentication_status"] == False:
-    st.error("Wrong username or password")
-elif st.session_state["authentication_status"] == None:
-    st.warning("Please insert your credentials")
-elif st.session_state["authentication_status"]: 
-    if "loggedIn" not in st.session_state:
-        st.session_state["loggedIn"] = True
-
-    try:
-        if st.session_state["authenticator"].reset_password(st.session_state["username"]): 
-            st.success('Password modified successfully')      
-    except Exception as e:    
-        st.error(e)
-    st.write(config) # DEBUG 2
-    st.write(st.session_state) # DEBUG 3
-    with open('multipage1/diagnose/config.yaml', 'w') as file:
-        yaml.dump(config, file, default_flow_style=False)
+def sign_up():
+  with st.form(key='signup', slear_on_submit = True):
+    at.subheader('Sign Up')
