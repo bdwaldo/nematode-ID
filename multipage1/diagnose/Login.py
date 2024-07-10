@@ -32,7 +32,7 @@ def sign_up():
           st.warning('Invalid Email')
   st.form_submit_button('Sign Up')  
 
-#sign_up()
+sign_up()
 
                    
                    
