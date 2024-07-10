@@ -24,7 +24,6 @@ def sign_up():
                hashed_password = stauth.Hasher([password2]).generate #add user to database
                insert_user(email, username, hashed_password[0])
                st.success('Account created successfully')
-
              else:
                st.warning('Passwords do not match')
            else:
