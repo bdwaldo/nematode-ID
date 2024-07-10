@@ -23,6 +23,7 @@ if email:
           if password1 == password2:
             hashed_password = stauth.Hasher([password2]).generate #add user to database
             insert_user(email, username, hashed_password[0])
+            st.success('Account created successfully')
 
           else:
             st.warning('Passwords do not match')
@@ -32,6 +33,7 @@ if email:
         st.warning('Invalid Username')
     else:
       st.warning('Invalid Email')
+st.form_submit_buttong('Sign Up')  
 
 sign_up()
 
