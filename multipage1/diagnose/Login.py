@@ -33,6 +33,8 @@ if email:
     else:
       st.warning('Invalid Email')
 
+sign_up()
+
                    
                    
             
