@@ -30,7 +30,7 @@ def sign_up():
             st.warning('Invalid Username')
         else:
           st.warning('Invalid Email')
-  st.form_submit_button('Sign Up')  
+    st.form_submit_button('Sign Up')  
 
 sign_up()
 
