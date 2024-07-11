@@ -19,8 +19,11 @@ def sign_in():
     password = st.text_input('Password', placeholder='Enter your password')
     st.form_submit_button('Login')  
 
-    if username in usernames and password in passwords:
-      st.write("Login successful")
+    #check that username and password in list match
+    for i in range(len(usernames)):
+      if username == usernames[i] and password == passwords[i]:
+        st.write("Login successful")
+        break
     else: 
       st.warning("Username/password invalid")
       
