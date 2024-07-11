@@ -17,12 +17,13 @@ def sign_in():
     st.subheader('Login')
     username = st.text_input('Username', placeholder='Enter your username')
     name = st.text_input('Password', placeholder='Enter your password')
+    st.form_submit_button('Login')  
 
     if username in usernames and password in passwords:
       st.write("Login successful")
     else: 
       st.warning("Username/password invalid")
-st.form_submit_button('Login')        
+      
       
 sign_in()
 
