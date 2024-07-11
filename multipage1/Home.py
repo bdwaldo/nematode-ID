@@ -6,7 +6,7 @@ import streamlit as st
 #    page_title="Welcome")
    
 
-st.write("# Welcome to Nematode ID!")
+st.write("Welcome to Nematode ID!")
 
 st.sidebar.success("Select a Page.")
 
