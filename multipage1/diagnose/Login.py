@@ -3,7 +3,6 @@
 
 import streamlit as st
 import streamlit_authenticator as stauth
-from streamlit import SessionState
 import yaml
 
 # Load your configuration file (replace '../config.yaml' with your actual path)
