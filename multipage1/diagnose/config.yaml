@@ -1,7 +1,5 @@
 #credentials
 
-import yaml
-
 credentials:
   usernames:
     jsmith:
