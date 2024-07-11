@@ -8,24 +8,24 @@ home = st.Page(
 id_now = st.Page("ID_Now.py", title="ID Now", icon=":material/arrow_forward:", default=False)
 
 login = st.Page(
-    "diagnose/Login.py", title="Login", icon=":material/login:", default=False)
+    "multipage1/diagnose/Login.py", title="Login", icon=":material/login:", default=False)
 
 single = st.Page(
-    "diagnose/Single.py", title="Single", icon=":material/file_open:", default=False)
+    "multipage1/diagnose/Single.py", title="Single", icon=":material/file_open:", default=False)
 
 batch = st.Page(
-    "diagnose/Batch.py", title = "Batch", icon=":material/stacks:", default=False) 
+    "multipage1/diagnose/Batch.py", title = "Batch", icon=":material/stacks:", default=False) 
 
 tutorial = st.Page(
-    "help/Tutorial.py", title="Tutorial", icon=":material/text_snippet:",  default=False
+    "multipage1/help/Tutorial.py", title="Tutorial", icon=":material/text_snippet:",  default=False
 )
 
 faq = st.Page(
-    "help/FAQ.py", title="FAQ", icon=":material/help:", default=False
+    "multipage1/help/FAQ.py", title="FAQ", icon=":material/help:", default=False
 )
 
 contact = st.Page(
-    "help/Contact.py", title="Contact", icon=":material/info:", default=False
+    "multipage1/help/Contact.py", title="Contact", icon=":material/info:", default=False
 )
 
 
