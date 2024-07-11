@@ -13,7 +13,7 @@ usernames = st.secrets.un
 passwords = st.secrets.pw
 
 def sign_in():
-  with st.form(key='login', clear_on_submit = True) 
+  with st.form(key='login', clear_on_submit = True): 
     st.subheader('Login')
     username = st.text_input('Username', placeholder='Enter your username')
     name = st.text_input('Password', placeholder='Enter your password')
