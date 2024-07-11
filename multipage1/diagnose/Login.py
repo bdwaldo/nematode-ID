@@ -40,13 +40,13 @@ st.write = usernames
 
 
 with st.form("edit_profile"):
-  st.write("Edit Profile")
-  new_name = st.text_input("New name")
-  submitted = st.form_submit_button('Submit Form')
-  if (config['cookie']['name'] == new_name):
-      st.warning('Name already in use.')
-  else:
-      config['cookie']['name'] = new_name
+    st.write("Edit Profile")
+    new_name = st.text_input("New name")
+    submitted = st.form_submit_button('Submit Form')
+    if (config['cookie']['name'] == new_name):
+        st.warning('Name already in use.')
+    else:
+        config['cookie']['name'] = new_name
 
 
 
