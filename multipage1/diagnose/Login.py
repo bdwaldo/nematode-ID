@@ -22,6 +22,7 @@ def sign_in():
       st.write("Login successful")
     else: 
       st.warning("Username/password invalid")
+st.form_submit_button('Sign Up')        
       
 sign_in()
 
