@@ -16,7 +16,7 @@ def sign_in():
   with st.form(key='login', clear_on_submit = True): 
     st.subheader('Login')
     username = st.text_input('Username', placeholder='Enter your username')
-    name = st.text_input('Password', placeholder='Enter your password')
+    password = st.text_input('Password', placeholder='Enter your password')
     st.form_submit_button('Login')  
 
     if username in usernames and password in passwords:
