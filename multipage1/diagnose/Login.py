@@ -6,8 +6,11 @@ st.markdown('''This is a demo for a login page. I envision using accounts to sto
 sample information for diagnostics.''')
 
 st.caption('''I have created accounts manually for this example. 
-I would need to connect the "signup" page to a database in order to 
+I would need to connect the signup page to a database in order to 
 securely store and update user information.''') 
+
+
+
 
 #print username list (un)
 for x in range(len(st.secrets.un)):
