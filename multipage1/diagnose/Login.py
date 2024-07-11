@@ -70,12 +70,15 @@ if st.session_state["authentication_status"]:
     except Exception as e:
         st.error(e)
 
+
+#update user information
 if st.session_state["authentication_status"]:
     try:
         if authenticator.update_user_details(st.session_state["username"]):
             st.success('Entries updated successfully')
     except Exception as e:
         st.error(e)
+
 
 #update config file
 with open('multipage1/diagnose/config.yaml', 'w') as file:
