@@ -1,0 +1,8 @@
+credentials:
+  alice: mysecret123
+  bob: password456
+cookie:
+  name: my_cookie
+  key: my_cookie_key
+  expiry_days: 7
+pre-authorized: []
