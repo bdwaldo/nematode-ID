@@ -39,7 +39,7 @@ usernames = config['cookie']['name']
 st.write = usernames
 
 
-with st.form("edit_profile"):
+with st.form('edit_profile'):
     st.write('Edit Profile')
     new_name = st.text_input('New name')
     submitted = st.form_submit_button('Submit Form')
