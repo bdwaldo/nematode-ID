@@ -3,7 +3,7 @@ import streamlit_authenticator as stauth
 import yaml
 
 # Load your configuration file (replace '../config.yaml' with your actual path)
-with open('multipage1/diagnose/config.yaml') as file:
+with open('/home/benjamin.waldo/config.yaml') as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
 
 # Create an authentication object
@@ -15,14 +15,14 @@ authenticator = stauth.Authenticate(
     config['pre-authorized']
 )
 
-# Hash passwords (this will automatically hash plain text passwords in the config)
-hashed_passwords = authenticator.hash_passwords()
+#https://github.com/mkhorasani/Streamlit-Authenticator/tree/main?tab=readme-ov-file#authenticatelogin
+authenticator.login()
 
-# Now replace plain text passwords in the configuration file with the hashed passwords
-# (you don't need to manually hash them)
-# ...
-
-# Use the hashed passwords as needed
-# ...
-
-
+if st.session_state["authentication_status"]:
+    authenticator.logout()
+    st.write(f'Welcome *{st.session_state["name"]}*')
+    st.title('Some content')
+elif st.session_state["authentication_status"] is False:
+    st.error('Username/password is incorrect')
+elif st.session_state["authentication_status"] is None:
+    st.warning('Please enter your username and password')
