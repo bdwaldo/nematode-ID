@@ -36,7 +36,7 @@ elif st.session_state["authentication_status"] is None:
 
 #update user information
 usernames = config['cookie']['name']
-st.write = suernames
+st.write = usernames
 
 
 with st.form("edit_profile"):
