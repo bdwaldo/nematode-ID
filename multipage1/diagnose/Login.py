@@ -40,7 +40,7 @@ st.write = usernames
 
 
 with st.form('edit_profile'):
-    st.write('Edit Profile')
+    st.write('Edit Name')
     new_name = st.text_input('New name')
     submitted = st.form_submit_button('Submit Form')
     if (config['cookie']['name'] == new_name):
