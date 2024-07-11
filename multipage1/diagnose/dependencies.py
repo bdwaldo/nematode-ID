@@ -1,4 +1,4 @@
-#login page
+#signup page
 #https://github.com/Frost-Codes/Streamlit-Authentication/blob/main/dependancies.py
   
 import streamlit as st
