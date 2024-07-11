@@ -7,7 +7,7 @@ import yaml
 
 # Load your configuration file (replace '../config.yaml' with your actual path)
 #make sure yaml file extension is correct. won't work if created in jupytr notebook
-with open('/home/benjamin.waldo/config.yaml') as file:
+with open('/multipage/config.yaml') as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
 
 # Create an authentication object
