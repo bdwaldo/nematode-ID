@@ -38,8 +38,6 @@ elif st.session_state["authentication_status"] is None:
 usernames = config['cookie']['name']
 st.write = usernames
 
-with st.form("my_form"):
-  st.write("Sample Information")
 
 with st.form("edit_profile"):
     st.write('Edit Profile')
