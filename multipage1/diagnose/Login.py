@@ -3,7 +3,7 @@ import streamlit_authenticator as stauth
 import yaml
 
 # Load your configuration file (replace '../config.yaml' with your actual path)
-with open('/home/benjamin.waldo/config.yaml') as file:
+with open('multipage1/diagnose/config.yaml') as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
 
 # Create an authentication object
