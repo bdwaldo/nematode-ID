@@ -40,7 +40,7 @@ if st.session_state["authentication_status"]:
     except Exception as e:
         st.error(e)
 
-
+#create new user
 try:
     email_of_registered_user, username_of_registered_user, name_of_registered_user = authenticator.register_user(pre_authorization=False)
     if email_of_registered_user:
@@ -70,7 +70,12 @@ if st.session_state["authentication_status"]:
     except Exception as e:
         st.error(e)
 
-
+if st.session_state["authentication_status"]:
+    try:
+        if authenticator.update_user_details(st.session_state["username"]):
+            st.success('Entries updated successfully')
+    except Exception as e:
+        st.error(e)
 
 #update config file
 with open('multipage1/diagnose/config.yaml', 'w') as file:
