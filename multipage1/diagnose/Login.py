@@ -1,38 +1,28 @@
 import streamlit as st
-import os
+import streamlit_authenticator as stauth
+import yaml
 
-st.header("Login to account")
-st.markdown('''This is a demo for a login page. I envision using accounts to store and track
-sample information for diagnostics.''')
+# Load your configuration file (replace '../config.yaml' with your actual path)
+with open('../config.yaml') as file:
+    config = yaml.load(file, Loader=yaml.SafeLoader)
 
-st.caption('''I have created accounts manually for this example. 
-I would need to connect the signup page to a database in order to 
-securely store and update user information.''') 
+# Create an authentication object
+authenticator = stauth.Authenticate(
+    config['credentials'],
+    config['cookie']['name'],
+    config['cookie']['key'],
+    config['cookie']['expiry_days'],
+    config['pre-authorized']
+)
 
-usernames = st.secrets.un
-passwords = st.secrets.pw
+# Hash passwords (this will automatically hash plain text passwords in the config)
+hashed_passwords = authenticator.hash_passwords()
 
-def sign_in():
-  with st.form(key='login', clear_on_submit = True): 
-    st.subheader('Login')
-    username = st.text_input('Username', placeholder='Enter your username')
-    password = st.text_input('Password', placeholder='Enter your password')
-    st.form_submit_button('Login')  
+# Now replace plain text passwords in the configuration file with the hashed passwords
+# (you don't need to manually hash them)
+# ...
 
-    #check that username and password in list match
-    for i in range(len(usernames)):
-      if username == usernames[i] and password == passwords[i]:
-        st.write("Login successful")
-        break
-    else: 
-      st.warning("Username/password invalid")
-      
-      
-sign_in()
-
-
-#print username list (un)
-#for x in range(len(st.secrets.un)): 
-  #st.write(st.secrets.un[x])
+# Use the hashed passwords as needed
+# ...
 
 
