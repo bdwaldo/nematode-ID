@@ -42,11 +42,6 @@ if st.session_state["authentication_status"]:
         st.error(e)
 
 
-#new user widget
-ss = SessionState.get(user_name="", user_email="")
-ss.user_name = st.text_input("Enter your name:")
-ss.user_email = st.text_input("Enter your email:")
-
 try:
     email_of_registered_user, username_of_registered_user, name_of_registered_user = authenticator.register_user(pre_authorization=False)
     if email_of_registered_user:
