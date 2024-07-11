@@ -1,8 +1,17 @@
 credentials:
-  alice: mysecret123
-  bob: password456
+  usernames:
+    jsmith:
+      email: jsmith@gmail.com
+      name: John Smith
+      password: abc # To be replaced with hashed password
+    rbriggs:
+      email: rbriggs@gmail.com
+      name: Rebecca Briggs
+      password: def # To be replaced with hashed password
 cookie:
-  name: my_cookie
-  key: my_cookie_key
-  expiry_days: 7
-pre-authorized: []
+  expiry_days: 30
+  key: random_signature_key # Must be string
+  name: random_cookie_name
+pre-authorized:
+  emails:
+  - melsby@gmail.com
