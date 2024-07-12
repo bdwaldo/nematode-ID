@@ -30,7 +30,7 @@ if st.session_state["authentication_status"]:
     authenticator.logout()
     st.write(f'Welcome *{st.session_state["name"]}*')
     st.title('Some content')
-    st.switch_page('multipage1/diagnose/Single.py')
+    st.switch_page('diagnose/Single.py')
 elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
 elif st.session_state["authentication_status"] is None:
