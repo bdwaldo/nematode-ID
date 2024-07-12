@@ -113,7 +113,7 @@ st.write(config['credentials']['usernames']['jsmith'])
 
 #update config file
 with open('multipage1/diagnose/config.yaml', 'w') as file:
-    yaml.safe_dump(config['credentials']['usernames']['jsmith'], file, default_flow_style=False)
+    yaml.safe_dump(config, file, default_flow_style=False)
 file.close()
 
 
