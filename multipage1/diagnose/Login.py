@@ -114,7 +114,7 @@ if st.session_state["authentication_status"]:
 
 #update config file
 try:
-    with open("config.yaml", "w") as f:
+    with open("mount/src/nematode-id/config.yaml", "w") as f:
         yaml.dump(config, stream=f, default_flow_style=False, sort_keys=False)
 except IOError as e:
     print(f"Error writing to file: {e}")
