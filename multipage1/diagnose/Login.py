@@ -119,7 +119,8 @@ try:
 except IOError as e:
     print(f"Error writing to file: {e}")
 
-
+import os
+st.write(os.getcwd())
 
 #update config file
 #with open('multipage1/diagnose/config.yaml', 'w') as file:
