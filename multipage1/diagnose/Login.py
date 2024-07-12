@@ -34,7 +34,7 @@ elif st.session_state["authentication_status"] is None:
 
 
 #print user information
-st.write(config['credentials']['usernames'])
+#st.write(config['credentials']['usernames'])
 
 
 
@@ -92,7 +92,7 @@ if st.session_state["authentication_status"]:
     except Exception as e:
         st.error(e)
 
-st.write(config['credentials']['usernames']['jsmith'])
+#st.write(config['credentials']['usernames']['jsmith'])
 
 
 
