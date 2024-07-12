@@ -1,3 +1,4 @@
+
 #streamlit authenticator login
 #https://github.com/mkhorasani/Streamlit-Authenticator/tree/main?tab=readme-ov-file#authenticatelogin
 
@@ -9,6 +10,8 @@ import yaml
 #make sure yaml file extension is correct. won't work if created in jupytr notebook
 with open('multipage1/diagnose/config.yaml') as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
+
+st.write(config)
 
 # Create an authentication object
 authenticator = stauth.Authenticate(
