@@ -117,7 +117,7 @@ try:
     with open("multipage1/diagnose/config.yaml", "w") as f:
         yaml.dump(config, stream=f, default_flow_style=False, sort_keys=False)
 except IOError as e:
-    print(f"Error writing to file: {e}")
+    st.error(f"Error writing to file: {e}")
 
 import os
 st.write(os.getcwd())
