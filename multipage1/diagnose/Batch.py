@@ -23,7 +23,6 @@ with st.form("my_form"):
   email = st.text_input("Submitter email address")
   date = st.date_input("Date sample collected", format="MM.DD.YYYY")
   ed = st.data_editor(edit_df, num_rows = "dynamic")
-  submitted = st.form_submit_button('Submit')
   submitted = st.form_submit_button('Submit Form')
 
 #data frame of text entry boxes
