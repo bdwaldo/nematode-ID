@@ -33,6 +33,15 @@ elif st.session_state["authentication_status"] is None:
     st.warning('Please enter your username and password')
 
 
+#print user information
+st.write(config['credentials']['usernames'])
+
+
+
+
+
+
+
 #reset password
 if st.session_state["authentication_status"]:
     try:
@@ -83,7 +92,7 @@ if st.session_state["authentication_status"]:
     except Exception as e:
         st.error(e)
 
-st.write(config['credentials']['usernames'])
+st.write(config['credentials']['usernames']['jsmith'])
 
 
 #update user information
