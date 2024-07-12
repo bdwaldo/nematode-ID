@@ -36,8 +36,6 @@ elif st.session_state["authentication_status"] is None:
     st.warning('Please enter your username and password')
 
 
-#print user information
-#st.write(config['credentials']['usernames'])
 
 
 
@@ -46,89 +44,64 @@ elif st.session_state["authentication_status"] is None:
 
 
 #reset password
-if st.session_state["authentication_status"]:
-    try:
-        if authenticator.reset_password(st.session_state["username"]):
-            st.success('Password modified successfully')
-    except Exception as e:
-        st.error(e)
+#if st.session_state["authentication_status"]:
+#    try:
+#        if authenticator.reset_password(st.session_state["username"]):
+#            st.success('Password modified successfully')
+#    except Exception as e:
+#        st.error(e)
 
 
 #New user
-try:
-    email_of_registered_user, username_of_registered_user, name_of_registered_user = authenticator.register_user(pre_authorization=False)
-    if email_of_registered_user:
-        st.success('User registered successfully')
-except Exception as e:
-    st.error(e)
+#won't add user to gihub file. need to connect to database
+#try:
+#    email_of_registered_user, username_of_registered_user, name_of_registered_user = authenticator.register_user(pre_authorization=False)
+#    if email_of_registered_user:
+#        st.success('User registered successfully')
+#except Exception as e:
+#    st.error(e)
 
 
-st.write(config)
 
 
 #forgot password
-try:
-    username_of_forgotten_password, email_of_forgotten_password, new_random_password = authenticator.forgot_password()
-    if username_of_forgotten_password:
-        st.success('New password to be sent securely')
-        # The developer should securely transfer the new password to the user.
-    elif username_of_forgotten_password == False:
-        st.error('Username not found')
-except Exception as e:
-    st.error(e)
+#try:
+#    username_of_forgotten_password, email_of_forgotten_password, new_random_password = authenticator.forgot_password()
+#    if username_of_forgotten_password:
+#        st.success('New password to be sent securely')
+#        # The developer should securely transfer the new password to the user.
+#    elif username_of_forgotten_password == False:
+#        st.error('Username not found')
+#except Exception as e:
+#    st.error(e)
 
 
 #forgot username
-try:
-    username_of_forgotten_username, email_of_forgotten_username = authenticator.forgot_username()
-    if username_of_forgotten_username:
-        st.success('Username to be sent securely')
-        # The developer should securely transfer the username to the user.
-    elif username_of_forgotten_username == False:
-        st.error('Email not found')
-except Exception as e:
-    st.error(e)
+#try:
+#    username_of_forgotten_username, email_of_forgotten_username = authenticator.forgot_username()
+#    if username_of_forgotten_username:
+#        st.success('Username to be sent securely')
+#        # The developer should securely transfer the username to the user.
+#    elif username_of_forgotten_username == False:
+#        st.error('Email not found')
+#except Exception as e:
+#    st.error(e)
     
 
 #####################
 #update user information
-if st.session_state["authentication_status"]:
-    try:
-        if authenticator.update_user_details(st.session_state["username"]):
-            st.success('Entries updated successfully')
-    except Exception as e:
-        st.error(e)
+#have to connect to database to store user info file
+#if st.session_state["authentication_status"]:
+#    try:
+#        if authenticator.update_user_details(st.session_state["username"]):
+#            st.success('Entries updated successfully')
+#    except Exception as e:
+#        st.error(e)
 
-#st.write(config['credentials']['usernames']['jsmith'])
-
-
-
-#update user information
-#usernames = config['credentials']['usernames']
-#st.write = usernames
-
-
-#Trying to acutally update name
-#with st.form('edit_profile'):
-#    st.write('Edit Name')
-#    new_name = st.text_input('New name')
-#    submitted = st.form_submit_button('Submit Form')
-#    if (config['cookie']['name'] == new_name):
-#        st.warning('Name already in use.')
-#    else:
-#        config['cookie']['name'] = new_name
 
 
 #update config file
-    with open("multipage1/diagnose/config.yaml", "w") as f:
-        dp = yaml.dump(config, stream=f, default_flow_style=False, sort_keys=False)
-        st.write(dp)
-
-
-import os
-st.write(os.getcwd())
-
-#update config file
+#This does not update a git hub page. Would need to have file in database and give streamlit access
 #with open('multipage1/diagnose/config.yaml', 'w') as file:
 #    yaml.dump(config, file, default_flow_style=False)
 
