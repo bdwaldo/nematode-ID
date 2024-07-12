@@ -83,11 +83,11 @@ if st.session_state["authentication_status"]:
     except Exception as e:
         st.error(e)
 
-st.write(config['cookie']['name'])
+st.write(config['cookie']['name']['jsmith']['name'])
 
 
 #update user information
-#usernames = config['cookie']['name']
+#usernames = config['credentials']['usernames']
 #st.write = usernames
 
 
