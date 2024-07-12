@@ -4,7 +4,7 @@
 
 import streamlit as st
 import streamlit_authenticator as stauth
-from streamlit_extras.switch_page_button import switch_page
+#from streamlit_extras.switch_page_button import switch_page
 import yaml
 
 # Load your configuration file (replace '../config.yaml' with your actual path)
@@ -12,7 +12,6 @@ import yaml
 with open('multipage1/diagnose/config.yaml') as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
 
-st.write(config)
 
 # Create an authentication object
 authenticator = stauth.Authenticate(
@@ -31,7 +30,7 @@ if st.session_state["authentication_status"]:
     authenticator.logout()
     st.write(f'Welcome *{st.session_state["name"]}*')
     st.title('Some content')
-    st.page_switch('Single.py')
+    st.switch_page('Single.py')
 elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
 elif st.session_state["authentication_status"] is None:
