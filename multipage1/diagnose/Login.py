@@ -83,7 +83,7 @@ if st.session_state["authentication_status"]:
     except Exception as e:
         st.error(e)
 
-st.write(config['name'])
+st.write(config['credentials']['name'])
 
 
 #update user information
