@@ -76,12 +76,12 @@ except Exception as e:
 
 #####################
 #update user information
-#if st.session_state["authentication_status"]:
-#    try:
-#        if authenticator.update_user_details(st.session_state["username"]):
-#            st.success('Entries updated successfully')
-#    except Exception as e:
-#        st.error(e)
+if st.session_state["authentication_status"]:
+    try:
+        if authenticator.update_user_details(st.session_state["username"]):
+            st.success('Entries updated successfully')
+    except Exception as e:
+        st.error(e)
 
 
 #update user information
