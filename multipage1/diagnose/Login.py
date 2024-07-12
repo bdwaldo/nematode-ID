@@ -114,7 +114,7 @@ if st.session_state["authentication_status"]:
 
 #update config file
     with open("multipage1/diagnose/config.yaml", "w") as f:
-       dp =  yaml.dump(config, stream=f, default_flow_style=False, sort_keys=False)
+        dp = yaml.dump(config, stream=f, default_flow_style=False, sort_keys=False)
         st.write(dp)
 
 
