@@ -83,7 +83,7 @@ if st.session_state["authentication_status"]:
     except Exception as e:
         st.error(e)
 
-st.write(config['cookie']['name']['jsmith']['name'])
+st.write(config.jsmith['name'])
 
 
 #update user information
