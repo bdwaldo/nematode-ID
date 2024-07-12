@@ -115,9 +115,8 @@ if st.session_state["authentication_status"]:
 #update config file
 try:
     with open("multipage1/diagnose/config.yaml", "w") as f:
-        yaml.dump(config, stream=f, default_flow_style=False, sort_keys=False)
-except IOError as e:
-    st.error(f"Error writing to file: {e}")
+        st.write(yaml.dump(config, stream=f, default_flow_style=False, sort_keys=False))
+
 
 import os
 st.write(os.getcwd())
