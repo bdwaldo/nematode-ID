@@ -95,6 +95,7 @@ if st.session_state["authentication_status"]:
 st.write(config['credentials']['usernames']['jsmith'])
 
 
+
 #update user information
 #usernames = config['credentials']['usernames']
 #st.write = usernames
@@ -112,8 +113,12 @@ st.write(config['credentials']['usernames']['jsmith'])
 
 
 #update config file
-with open('/config.yaml', 'w') as file:
-    yaml.safe_dump(config, file, default_flow_style=False)
+try:
+    with open("config.yaml", "w") as f:
+        yaml.dump(config, stream=f, default_flow_style=False, sort_keys=False)
+except IOError as e:
+    print(f"Error writing to file: {e}")
+
 
 
 #update config file
