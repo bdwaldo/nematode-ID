@@ -2,16 +2,16 @@ credentials:
   usernames:
     jsmith:
       email: jsmith@gmail.com
-      failed_login_attempts: 0
-      logged_in: false
       name: John Smith
-      password: $2b$12$sILdHJstGjmGw9AF/UBS6O/JgLgEWZCxft4NLUxZrVUtKijUayQ2G
+      password: abc # To be replaced with hashed password
     rbriggs:
       email: rbriggs@gmail.com
-      failed_login_attempts: 0
-      logged_in: false
       name: Rebecca Briggs
-      password: $2b$12$rBqr4vpZKNbUZc794YHCmeWldd9ylQBrqhXJzL0k348Crkg7iA/Um
+      password: def # To be replaced with hashed password
+cookie:
+  expiry_days: 30
+  key: random_signature_key # Must be string
+  name: random_cookie_name
 pre-authorized:
   emails:
   - melsby@gmail.com
