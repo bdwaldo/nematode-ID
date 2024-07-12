@@ -62,6 +62,10 @@ try:
 except Exception as e:
     st.error(e)
 
+
+st.write(config)
+
+
 #forgot password
 try:
     username_of_forgotten_password, email_of_forgotten_password, new_random_password = authenticator.forgot_password()
