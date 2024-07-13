@@ -36,8 +36,9 @@ elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
 elif st.session_state["authentication_status"] is None:
     st.warning('Please enter your username and password')
-    st.button('Single sample', on_click=st.write('multipage1/diagnose/Single.py'))
-    #st.switch_page('diagnose/Single.py') #switch to sample submission page
+    if st.button('Single sample'):
+        st.switch_page('diagnose/Single.py')
+        #st.switch_page('diagnose/Single.py') #switch to sample submission page
 
 
 
