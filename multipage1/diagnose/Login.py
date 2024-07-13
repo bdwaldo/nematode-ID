@@ -9,7 +9,7 @@ import yaml
 
 # Load your configuration file (replace '../config.yaml' with your actual path)
 #make sure yaml file extension is correct. won't work if created in jupytr notebook
-with open('multipage1/diagnose/config.yaml') as file:
+with open('diagnose/config.yaml') as file:
     config = yaml.load(file, Loader=yaml.SafeLoader)
 
 
