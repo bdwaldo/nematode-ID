@@ -26,6 +26,7 @@ authenticator = stauth.Authenticate(
 #this function is the up to date version
 authenticator.login()
 
+st.write(st.session_state["authentication_status"])
 
 if st.session_state["authentication_status"]:
     authenticator.logout()
