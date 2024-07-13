@@ -1,7 +1,7 @@
 numpy
 pillow
 opencv-python-headless
-tensorflow==2.13.1
+tensorflow
 matplotlib
 streamlit_authenticator
 streamlit-extras
