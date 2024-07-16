@@ -92,7 +92,7 @@ if upload is not None:
   #print prediction and probability
   st.write(
     "This image is most likely {} with a {:.2f} percent confidence."
-    .format(predictions[np.argmax(score)], 100 * np.max(score)))
+    .format(class_name[np.argmax(score)], 100 * np.max(score)))
 
 
 #st.write(class_names)
