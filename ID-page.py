@@ -75,7 +75,8 @@ if upload is not None:
   image = keras.utils.load_img(upload, target_size=(img_height, img_width))
 
   #convert image to array
-  img_array = np.array(image)
+  img_array = np.array(image).astype('float32')/255
+  img_array = transform.resize(img_array, (256, 256, 3))
   img_array = np.expand_dims(img_array,axis = 0)
 
   #make prediction from uploaded image
