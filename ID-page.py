@@ -11,6 +11,9 @@ from keras import models
 #from keras.preprocessing.image import img_to_array
 from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
+#for google sheet import
+from streamlit_gsheets import GSheetsConnection
+
 
 #web page text
 st.header("Plant-Parasitic Nematode Image Classification")
@@ -35,7 +38,11 @@ c1, c2= st.columns(2)
 
 #load .h5 model from github repository
 #https://www.tensorflow.org/tutorials/keras/save_and_load
-model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
+#model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
+
+#bring in model from google drive
+conn = st.connection('model1.h5', type = GSheetsConnection)
+model = conn.read()
 
 #function for uploading image
 #https://github.com/streamlit/streamlit/issues/4101
