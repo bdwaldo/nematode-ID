@@ -95,6 +95,7 @@ if upload is not None:
 
 
 st.write(class_names)
+st.write(name_id_map)
 
   
  
