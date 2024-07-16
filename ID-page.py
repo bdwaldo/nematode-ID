@@ -53,7 +53,7 @@ def load_rf_model():
     model = tf.keras.models.load_model('nema_model.h5')
     return model
 
-model = tf.keras.models.load_model('nema_model.h5')
+
 
 #function for uploading image
 #https://github.com/streamlit/streamlit/issues/4101
@@ -69,7 +69,7 @@ if upload is not None:
 
   #make prediction from uploaded image
   #predictions = model.predict(img_array)
-  predictions = model.load_rf_model  
+  predictions = model.load_rf_model(img_array)  
   score = tf.nn.softmax(predictions[0])
 
   #print image can omit these three lines
