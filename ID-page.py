@@ -48,9 +48,9 @@ c1, c2= st.columns(2)
 @st.cache_resource
 def load_rf_model():
     url = 'https://drive.google.com/file/d/1Afnum9kXWdi8yD0ENfhTDmevyMRQ2osz/view?usp=drive_link'
-    output_path = 'model.h5'
+    output_path = 'nema_model.h5'
     gdown.download(url, output_path, quiet=False, fuzzy=True)
-    model = tf.keras.models.load_model('model.h5')
+    model = tf.keras.models.load_model('nema_model.h5')
     return model
 
 
@@ -68,7 +68,8 @@ if upload is not None:
   img_array = np.expand_dims(img_array,axis = 0)
 
   #make prediction from uploaded image
-  predictions = model.predict(img_array)
+  #predictions = model.predict(img_array)
+  predictions = model.load_rf_model  
   score = tf.nn.softmax(predictions[0])
 
   #print image can omit these three lines
