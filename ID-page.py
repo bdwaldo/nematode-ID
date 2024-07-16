@@ -34,7 +34,8 @@ img_width = 180
 #names to ID. Need to figure out how to pull directly from .h5 file
 #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
 
-class_names = ['Lance', 'Lesion', 'Ring', 'RKN', 'Spiral', 'Stubby', 'Stunt'] 
+#class_names = ['Lance', 'Lesion', 'Ring', 'RKN', 'Spiral', 'Stubby', 'Stunt'] 
+class_names = ['Lance', 'Lesion', 'Ring']
 
 #adding text to web page to upload image
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
