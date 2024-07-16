@@ -83,8 +83,10 @@ if upload is not None:
   #get names from prediction model
   with h5py.File("nema_model.h5", "r") as f:
       print("Keys:", list(f.keys()))
-      class_names = sorted(list(f.keys()))  # Get class names from the keys
-      
+  class_names = sorted(list(f.keys()))  # Get class names from the keys
+  predicted_class_index = predictions  # Replace with your actual prediction index
+  predicted_class_name = class_names[predicted_class_index]
+  print("Predicted class name:", predicted_class_name)
       
 
 
