@@ -73,16 +73,13 @@ if upload is not None:
   image = keras.utils.load_img(upload, target_size=(img_height, img_width))
 
   #convert image to array
+ #convert image to array
   img_array = np.array(image)
   img_array = np.expand_dims(img_array,axis = 0)
 
   #make prediction from uploaded image
-  #predictions = model.predict(img_array)
-  predictions = model.predict(img_array) 
-  #https://stackoverflow.com/questions/54167910/keras-how-to-use-argmax-for-predictions
-  class_name = np.argmax(predictions)
+  predictions = model.predict(img_array)
   score = tf.nn.softmax(predictions[0])
-
 
   #print image can omit these three lines
   iu= Image.open(upload)
@@ -92,7 +89,7 @@ if upload is not None:
   #print prediction and probability
   st.write(
     "This image is most likely {} with a {:.2f} percent confidence."
-    .format(class_name[np.argmax(score)], 100 * np.max(score)))
+    .format(class_names[np.argmax(score)], 100 * np.max(score)))
 
 
 #st.write(class_names)
