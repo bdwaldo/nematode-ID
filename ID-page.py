@@ -80,7 +80,7 @@ if upload is not None:
   #predictions = model.predict(img_array)
   predictions = model.predict(img_array) 
   #https://stackoverflow.com/questions/54167910/keras-how-to-use-argmax-for-predictions
-  class_name = class_names[np.argmax(predictions, axis=-1)]
+  #class_name = class_names[np.argmax(predictions, axis=-1)]
   score = tf.nn.softmax(predictions[0])
 
 
@@ -92,7 +92,7 @@ if upload is not None:
   #print prediction and probability
   st.write(
     "This image is most likely {} with a {:.2f} percent confidence."
-    .format(class_name[np.argmax(score)], 100 * np.max(score)))
+    .format(predictions[np.argmax(score)], 100 * np.max(score)))
 
 
 #st.write(class_names)
