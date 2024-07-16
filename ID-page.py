@@ -79,7 +79,7 @@ if upload is not None:
   #predictions = model.predict(img_array)
   predictions = model.predict(img_array) 
   #https://stackoverflow.com/questions/54167910/keras-how-to-use-argmax-for-predictions
-  class_name = class_names[np.argmax(predictions)]
+  class_name = class_names[np.argmax(predictions, ,axis=1)]
   score = tf.nn.softmax(predictions[0])
 
 
