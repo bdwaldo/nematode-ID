@@ -34,7 +34,7 @@ img_width = 180
 #names to ID. Need to figure out how to pull directly from .h5 file
 #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
 
-#class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus'] 
+class_names = ['Lance', 'Lesion', 'Ring', 'RKN', 'Spiral', 'Stubby', 'Stunt'] 
 
 #adding text to web page to upload image
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
@@ -78,7 +78,8 @@ if upload is not None:
   #make prediction from uploaded image
   #predictions = model.predict(img_array)
   predictions = model.predict(img_array) 
-  class_name = np.argmax(predictions, axis=-1)  
+  #https://stackoverflow.com/questions/54167910/keras-how-to-use-argmax-for-predictions
+  class_name = class_names[np.argmax(predictions, axis=-1)]
   score = tf.nn.softmax(predictions[0])
 
 
