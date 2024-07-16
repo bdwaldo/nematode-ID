@@ -30,19 +30,23 @@ img_width = 180
 
 #names to ID. Need to figure out how to pull directly from .h5 file
 #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
-class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus'] 
+
+#class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus'] 
 
 #adding text to web page to upload image
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 
 
-
+###############################################
+#unblock if model is in Github repository
 #load .h5 model from github repository
 #https://www.tensorflow.org/tutorials/keras/save_and_load
 #model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
+################################################
 
-
+################################################
+#block out if pulling model file from github
 #bring in .h5 model from google drive
 #https://pub.towardsai.net/how-to-deploy-models-larger-than-100mb-on-streamlit-1a553cc8bf0f
 @st.cache_resource
@@ -54,6 +58,7 @@ def load_rf_model():
     return model
 
 model = tf.keras.models.load_model('nema_model.h5')
+####################################################
 
 #function for uploading image
 #https://github.com/streamlit/streamlit/issues/4101
@@ -72,6 +77,9 @@ if upload is not None:
   predictions = model.predict(img_array)  
   score = tf.nn.softmax(predictions[0])
 
+  #get names from prediction model
+  class_names = predictions.argmax(axis=-1)
+
   #print image can omit these three lines
   iu= Image.open(upload)
   c1.header('Input Image')
@@ -83,45 +91,6 @@ if upload is not None:
     .format(class_names[np.argmax(score)], 100 * np.max(score)))
 
   
-  #y_classes = predictions.argmax(axis = -1)
-  
-  
-  
-  #print(
-   # "This image is most likely {} with a {:.2f} percent confidence."
-   # .format(class_names[np.argmax(score)], 100 * np.max(score)))
-
-  #st.write(model.predict(img, verbose=0)[0][0])
-  
-  
-  
-  #im= Image.open(upload)
-  #img= np.asarray(im)
-  #image= cv2.resize(img,(180, 180))
-  #img= preprocess_input(image)
-  #img= np.expand_dims(img, 0)
-  
-  #ii = tf.keras.utils.load_img(
-  #  im, target_size=(img_height, img_width))
-  #img_array = tf.keras.utils.img_to_array(ii)
-  #img_array = tf.expand_dims(img_array, 0) # Create a batch
-  #predictions = model.predict(img_array)
-  #score = tf.nn.softmax(predictions[0])
-  #c1.header('Input Image')
-  #c1.image(im)
-  #c1.write("This image most likely belongs to {} with a {:.2f} percent confidence."
-  #         .format(class_names[np.argmax(score)], 100 * np.max(score)))
-    
-  
-
-##########################
-#https://www.tensorflow.org/tutorials/images/classification
-#Predict image
-# load the model we saved
-#https://www.tensorflow.org/tutorials/keras/save_and_load
-#model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
-
-
-
+ 
 
 
