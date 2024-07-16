@@ -12,7 +12,7 @@ from keras import models
 from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
 #for google sheet import
-from streamlit_gsheets import GSheetsConnection
+import gdown
 
 
 #web page text
@@ -36,13 +36,23 @@ class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus']
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 
+
+
 #load .h5 model from github repository
 #https://www.tensorflow.org/tutorials/keras/save_and_load
 #model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
+
 #bring in model from google drive
-conn = st.connection('model1.h5', type = GSheetsConnection)
-model = conn.load_model()
+#https://pub.towardsai.net/how-to-deploy-models-larger-than-100mb-on-streamlit-1a553cc8bf0f
+@st.cache_resource
+def load_rf_model():
+    url = 'https://drive.google.com/file/d/1Afnum9kXWdi8yD0ENfhTDmevyMRQ2osz/view?usp=drive_link'
+    output_path = 'model.h5'
+    gdown.download(url, output_path, quiet=False, fuzzy=True)
+    model = tf.keras.models.load_model('model.h5')
+
+
 
 #function for uploading image
 #https://github.com/streamlit/streamlit/issues/4101
