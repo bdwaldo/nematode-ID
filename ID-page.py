@@ -13,7 +13,7 @@ from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
 #for google sheet import
 import gdown
-import h5py
+
 
 
 
@@ -31,9 +31,10 @@ st.caption("Questions may be directed to Benjamin.Waldo@usda.gov")
 img_height = 180
 img_width = 180
 
-#names to ID. Need to figure out how to pull directly from .h5 file
-#https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
 
+#These correspond to the directory names in alphabetical order.
+#https://www.tensorflow.org/tutorials/images/classification
+#https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
 #class_names = ['Lance', 'Lesion', 'Ring', 'RKN', 'Spiral', 'Stubby', 'Stunt'] 
 class_names = ['Lance', 'Lesion', 'Ring']
 
@@ -43,14 +44,15 @@ c1, c2= st.columns(2)
 
 
 ###############################################
-#unblock if model is in Github repository
+#unblock line below if model is in Github repository
 #load .h5 model from github repository
 #https://www.tensorflow.org/tutorials/keras/save_and_load
+
 #model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 ################################################
 
 ################################################
-#block out if pulling model file from github
+#block out lines below if pulling model file from github
 #bring in .h5 model from google drive
 #https://pub.towardsai.net/how-to-deploy-models-larger-than-100mb-on-streamlit-1a553cc8bf0f
 @st.cache_resource
@@ -73,12 +75,12 @@ if upload is not None:
   image = keras.utils.load_img(upload, target_size=(img_height, img_width))
 
   #convert image to array
- #convert image to array
   img_array = np.array(image)
   img_array = np.expand_dims(img_array,axis = 0)
 
   #make prediction from uploaded image
   predictions = model.predict(img_array)
+  pred_name = class_names[np.argmax(predictions)]
   score = tf.nn.softmax(predictions[0])
 
   #print image can omit these three lines
@@ -87,9 +89,10 @@ if upload is not None:
   c1.image(iu)
   
   #print prediction and probability
+  #https://stackoverflow.com/questions/54167910/keras-how-to-use-argmax-for-predictions
   st.write(
     "This image is most likely {} with a {:.2f} percent confidence."
-    .format(class_names[np.argmax(score)], 100 * np.max(score)))
+    .format(pred_name[np.argmax(score)], 100 * np.max(score)))
 
 
 #st.write(class_names)
