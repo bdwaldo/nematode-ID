@@ -82,10 +82,11 @@ if upload is not None:
 
   #get names from prediction model
   with h5py.File("nema_model.h5", "r") as f:
+      print("Keys:", list(f.keys()))
       class_names = sorted(list(f.keys()))  # Get class names from the keys
-  #class_names = glob.glob("*") # Reads all the folders in which images are present
-  #class_names = sorted(class_names) # Sorting them
-  #name_id_map = dict(zip(class_names, range(len(class_names))))
+      
+      
+
 
   #print image can omit these three lines
   iu= Image.open(upload)
