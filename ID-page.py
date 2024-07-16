@@ -81,13 +81,26 @@ if upload is not None:
   score = tf.nn.softmax(predictions[0])
 
   #get names from prediction model
-  with h5py.File("nema_model.h5", "r") as f:
-      print("Keys:", list(f.keys()))
-  class_names = sorted(list(f.keys()))  # Get class names from the keys
-  predicted_class_index = predictions  # Replace with your actual prediction index
-  predicted_class_name = class_names[predicted_class_index]
-  print("Predicted class name:", predicted_class_name)
-      
+filename = "model"
+with h5py.File(filename, "r") as f:
+    # Print all root level object names (keys) in the file
+    print("Keys:", list(f.keys()))
+
+    # Get the first object name/key (may or may not be a group)
+    a_group_key = list(f.keys())[0]
+
+    # Get the object type for a_group_key (usually group or dataset)
+    print("Type:", type(f[a_group_key]))
+
+    # If a_group_key is a group name, get the object names in the group
+    data = list(f[a_group_key])
+
+    # If a_group_key is a dataset name, get the dataset values
+    data = list(f[a_group_key])
+
+    # Preferred methods to get dataset values:
+    ds_obj = f[a_group_key]  # Returns as an h5py dataset object
+    ds_arr = f[a_group_key][()]  # Returns as a numpy array
 
 
   #print image can omit these three lines
