@@ -81,8 +81,8 @@ if upload is not None:
   score = tf.nn.softmax(predictions[0])
 
   #get names from prediction model
-filename = "model"
-with h5py.File(filename, "r") as f:
+  filename = "nema_model.h5"
+  with h5py.File(filename, "r") as f:
     # Print all root level object names (keys) in the file
     print("Keys:", list(f.keys()))
 
