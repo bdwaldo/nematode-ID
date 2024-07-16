@@ -5,6 +5,7 @@ streamlit
 opencv-python-headless
 tensorflow==2.12.0
 gdown
+h5py
 
 
 
