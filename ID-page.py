@@ -77,22 +77,9 @@ if upload is not None:
 
   #make prediction from uploaded image
   #predictions = model.predict(img_array)
-  predictions = model.predict(img_array)  
+  predictions = model.predict_classes(img_array)  
   score = tf.nn.softmax(predictions[0])
 
-  #get names from prediction model
-  filename = "nema_model.h5"
-  with h5py.File(filename, "r") as f:
-    # Print all root level object names (keys) in the file
-    print("Keys:", list(f.keys()))
-
-    # Get the first object name/key (may or may not be a group)
-    a_group_key = list(f.keys())[0]
-
-    # Get the object type for a_group_key (usually group or dataset)
-    print("Type:", type(f[a_group_key]))
-
-   
 
   #print image can omit these three lines
   iu= Image.open(upload)
