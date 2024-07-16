@@ -82,7 +82,7 @@ if upload is not None:
   score = tf.nn.softmax(predictions[0])
 
   #get names from prediction model
-  class_names = glob("*") # Reads all the folders in which images are present
+  class_names = glob.glob("*") # Reads all the folders in which images are present
   #class_names = sorted(class_names) # Sorting them
   #name_id_map = dict(zip(class_names, range(len(class_names))))
 
