@@ -42,7 +42,7 @@ c1, c2= st.columns(2)
 
 #bring in model from google drive
 conn = st.connection('model1.h5', type = GSheetsConnection)
-model = conn.read()
+model = conn.load_model()
 
 #function for uploading image
 #https://github.com/streamlit/streamlit/issues/4101
