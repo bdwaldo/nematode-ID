@@ -13,6 +13,7 @@ from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
 #for google sheet import
 import gdown
+import glob
 
 
 #web page text
@@ -78,7 +79,9 @@ if upload is not None:
   score = tf.nn.softmax(predictions[0])
 
   #get names from prediction model
-  class_names = predictions.argmax(axis=-1)
+  class_names = glob("*") # Reads all the folders in which images are present
+  class_names = sorted(class_names) # Sorting them
+  name_id_map = dict(zip(class_names, range(len(class_names))))
 
   #print image can omit these three lines
   iu= Image.open(upload)
