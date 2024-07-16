@@ -90,6 +90,9 @@ if upload is not None:
     "This image is most likely {} with a {:.2f} percent confidence."
     .format(class_names[np.argmax(score)], 100 * np.max(score)))
 
+
+st.write(class_names)
+
   
  
 
