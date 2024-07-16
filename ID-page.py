@@ -53,7 +53,7 @@ def load_rf_model():
     model = tf.keras.models.load_model('nema_model.h5')
     return model
 
-
+model = tf.keras.models.load_model('nema_model.h5')
 
 #function for uploading image
 #https://github.com/streamlit/streamlit/issues/4101
