@@ -92,16 +92,7 @@ if upload is not None:
     # Get the object type for a_group_key (usually group or dataset)
     print("Type:", type(f[a_group_key]))
 
-    # If a_group_key is a group name, get the object names in the group
-    data = list(f[a_group_key])
-
-    # If a_group_key is a dataset name, get the dataset values
-    data = list(f[a_group_key])
-
-    # Preferred methods to get dataset values:
-    ds_obj = f[a_group_key]  # Returns as an h5py dataset object
-    ds_arr = f[a_group_key][()]  # Returns as a numpy array
-
+   
 
   #print image can omit these three lines
   iu= Image.open(upload)
