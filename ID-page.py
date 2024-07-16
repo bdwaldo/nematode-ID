@@ -78,7 +78,7 @@ if upload is not None:
   #make prediction from uploaded image
   #predictions = model.predict(img_array)
   predictions = model.predict(img_array) 
-  class_name = np.argmax(predictions, axis=1)  
+  class_name = np.argmax(predictions, axis=-1)  
   score = tf.nn.softmax(predictions[0])
 
 
