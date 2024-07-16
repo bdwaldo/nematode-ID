@@ -13,7 +13,7 @@ from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
 #for google sheet import
 import gdown
-from skimage import transform
+
 
 
 
@@ -77,7 +77,6 @@ if upload is not None:
 
   #convert image to array
   img_array = np.array(image).astype('float32')/255
-  img_array = transform.resize(img_array, (256, 256, 3))
   img_array = np.expand_dims(img_array,axis = 0)
 
   #make prediction from uploaded image
