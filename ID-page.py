@@ -69,7 +69,7 @@ if upload is not None:
 
   #make prediction from uploaded image
   #predictions = model.predict(img_array)
-  predictions = model.load_rf_model(img_array)  
+  predictions = model.predict(img_array)  
   score = tf.nn.softmax(predictions[0])
 
   #print image can omit these three lines
