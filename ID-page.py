@@ -43,7 +43,7 @@ c1, c2= st.columns(2)
 #model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
 
 
-#bring in model from google drive
+#bring in .h5 model from google drive
 #https://pub.towardsai.net/how-to-deploy-models-larger-than-100mb-on-streamlit-1a553cc8bf0f
 @st.cache_resource
 def load_rf_model():
@@ -51,6 +51,7 @@ def load_rf_model():
     output_path = 'model.h5'
     gdown.download(url, output_path, quiet=False, fuzzy=True)
     model = tf.keras.models.load_model('model.h5')
+    return model
 
 
 
