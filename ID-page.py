@@ -98,6 +98,7 @@ if upload is not None:
 
 st.write(class_names)
 st.write(pred_name)
+st.write(pred_name[np.argmax(score)]
 
   
  
