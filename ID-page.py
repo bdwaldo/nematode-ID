@@ -80,10 +80,10 @@ if upload is not None:
   img_array = np.expand_dims(img_array,axis = 0)
 
   #make prediction from uploaded image
-  predictions = model.predict(img_array)
-  class_index = np.argmax(predictions)  
-  predicted_class = class_names[class_index]
-  score = tf.nn.softmax(predictions[0])
+  predictions = model.predict(img_array) #the  
+  class_index = np.argmax(predictions) #the 0,1,2...etc above the value is class value
+  predicted_class = class_names[class_index] #name, the value corresponds to the class name
+  score = tf.nn.softmax(predictions[0]) #
 
   #print image can omit these three lines
   iu= Image.open(upload)
@@ -97,12 +97,7 @@ if upload is not None:
     .format(predicted_class, 100 * np.max(score)))
 
 
-st.write(class_names)
-st.write(predictions)
-st.write(class_index)
-st.write(predicted_class)
 
-  
  
 
 
