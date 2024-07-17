@@ -81,7 +81,8 @@ if upload is not None:
 
   #make prediction from uploaded image
   predictions = model.predict(img_array)
-  pred_name = class_names[np.argmax(predictions)]
+  class_index = np.argmax(predictions)  
+  predicted_class = class_names[class_index]
   score = tf.nn.softmax(predictions[0])
 
   #print image can omit these three lines
@@ -97,8 +98,8 @@ if upload is not None:
 
 
 st.write(class_names)
-st.write(pred_name)
-st.write(pred_name[np.argmax(score)])
+st.write(predicted_class)
+st.write(predictions)
 
   
  
