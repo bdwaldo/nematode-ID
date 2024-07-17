@@ -33,6 +33,7 @@ img_width = 180
 #https://www.tensorflow.org/tutorials/images/classification
 #https://stackoverflow.com/questions/38971293/get-class-labels-from-keras-functional-model
 #class_names = ['Lance', 'Lesion', 'Ring', 'RKN', 'Spiral', 'Stubby', 'Stunt'] 
+#class_names = ['Hoplolaimus', 'Pratylenchus', 'Mesocriconema', 'Meloidogyne', 'Helicotylenchus', 'Trichodorus', 'Tylenchorhynchus']
 class_names = ['Lance', 'Lesion', 'Ring']
 
 #adding text to web page to upload image
