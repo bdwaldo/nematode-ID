@@ -94,7 +94,7 @@ if upload is not None:
   #https://stackoverflow.com/questions/54167910/keras-how-to-use-argmax-for-predictions
   st.write(
     "This image is most likely {} with a {:.2f} percent confidence."
-    .format(pred_name[np.argmax(score)], 100 * np.max(score)))
+    .format(class_index[np.argmax(score)], 100 * np.max(score)))
 
 
 st.write(class_names)
