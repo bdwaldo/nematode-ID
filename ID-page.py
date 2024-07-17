@@ -80,9 +80,9 @@ if upload is not None:
   img_array = np.expand_dims(img_array,axis = 0)
 
   #make prediction from uploaded image
-  predictions = model.predict(img_array) #the  
-  class_index = np.argmax(predictions) #the 0,1,2...etc above the value is class value
-  predicted_class = class_names[class_index] #name, the value corresponds to the class name
+  predictions = model.predict(img_array)   
+  class_index = np.argmax(predictions) # Get the index of the highest probability class
+  predicted_class = class_names[class_index] # Map the index to the corresponding class name
   score = tf.nn.softmax(predictions[0]) #
 
   #print image can omit these three lines
