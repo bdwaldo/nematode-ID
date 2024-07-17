@@ -92,14 +92,15 @@ if upload is not None:
   
   #print prediction and probability
   #https://stackoverflow.com/questions/54167910/keras-how-to-use-argmax-for-predictions
-  #st.write(
-    #"This image is most likely {} with a {:.2f} percent confidence."
-    #.format(class_index[np.argmax(score)], 100 * np.max(score)))
+  st.write(
+    "This image is most likely {} with a {:.2f} percent confidence."
+    .format(predicted_class, 100 * np.max(score)))
 
 
 st.write(class_names)
-st.write(predicted_class)
 st.write(predictions)
+st.write(class_index)
+st.write(predicted_class)
 
   
  
