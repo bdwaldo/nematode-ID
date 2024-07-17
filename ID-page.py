@@ -11,11 +11,7 @@ from keras import models
 #from keras.preprocessing.image import img_to_array
 from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
-#for google sheet import
-import gdown
-
-
-
+import gdown #for google sheet import
 
 
 
@@ -58,10 +54,10 @@ c1, c2= st.columns(2)
 #https://pub.towardsai.net/how-to-deploy-models-larger-than-100mb-on-streamlit-1a553cc8bf0f
 @st.cache_resource
 def load_rf_model():
-    url = 'https://drive.google.com/file/d/1Afnum9kXWdi8yD0ENfhTDmevyMRQ2osz/view?usp=drive_link'
-    output_path = 'nema_model.h5'
+    url = 'https://drive.google.com/file/d/1Afnum9kXWdi8yD0ENfhTDmevyMRQ2osz/view?usp=drive_link' #CHANGE URL
+    output_path = 'nema_model.h5' #CHANGE FILENAME
     gdown.download(url, output_path, quiet=False, fuzzy=True)
-    model = tf.keras.models.load_model('nema_model.h5')
+    model = tf.keras.models.load_model('nema_model.h5') #CHANGE FILE NAME
     return model
 
 model = tf.keras.models.load_model('nema_model.h5')
