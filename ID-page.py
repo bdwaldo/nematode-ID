@@ -96,8 +96,8 @@ if upload is not None:
     .format(pred_name[np.argmax(score)], 100 * np.max(score)))
 
 
-#st.write(class_names)
-#st.write(name_id_map)
+st.write(class_names)
+st.write(pred_name)
 
   
  
