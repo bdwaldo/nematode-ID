@@ -15,7 +15,7 @@ st.markdown(
     Nematode ID is a source for identifying plant-parasitic nematodes from images.
     **Select a page from the sidebar** to get started.
     ### Want to learn more?
-    -Tutorial coming soon!
+    - Tutorial coming soon!
     
 
     ### Basic Information
