@@ -24,7 +24,7 @@ authenticator = stauth.Authenticate(
 
 
 #this function is the up to date version
-authenticator.login()
+authenticator.login('main')
 
 st.write(st.session_state["authentication_status"])
 
