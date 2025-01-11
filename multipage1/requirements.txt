@@ -6,3 +6,4 @@ matplotlib
 streamlit_authenticator
 streamlit-extras
 pyyaml
+torch
