@@ -14,6 +14,7 @@ from keras import models
 #from keras.preprocessing.image import img_to_array
 from tensorflow.keras.utils import img_to_array
 from tensorflow.keras.preprocessing import image
+import torch
 
 #web page text
 st.header("Plant-Parasitic Nematode Image Classification")
@@ -36,9 +37,19 @@ class_names = ['Hoplolaimus', 'Mesocriconema', 'Pratylenchus']
 upload= st.file_uploader('Select image for identification', type=['png','jpg'])
 c1, c2= st.columns(2)
 
-#load .h5 model from github repository
-#https://www.tensorflow.org/tutorials/keras/save_and_load
-model = tf.keras.models.load_model('nema_model.h5') #switch from load_model()
+#import pre-trained weights
+
+
+
+#load efficientnet model from pytorch/vision github repository
+#https://towardsdatascience.com/demo-your-model-with-streamlit-a76011467dfb
+#https://github.com/pytorch/vision/blob/main/torchvision/models/efficientnet.py
+#https://pytorch.org/docs/stable/hub.html
+#https://stackoverflow.com/questions/70167811/how-to-load-custom-model-in-pytorch
+model = torch.hub.load('pytorch/vision', 'efficientnet_v2_s', 'custom', path='')
+
+# Load ResNet-50 model from the pytorch/vision repository
+model = torch.hub.load('pytorch/vision', 'resnet50', weights='ResNet50_Weights.IMAGENET1K_V1')
 
 #function for uploading image
 #https://github.com/streamlit/streamlit/issues/4101
