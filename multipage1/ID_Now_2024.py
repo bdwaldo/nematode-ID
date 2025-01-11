@@ -1,4 +1,7 @@
 #https://medium.com/geekculture/image-classifier-with-streamlit-887fc186f60
+#this code runs on a simple .h5 model file
+#depreciating to attempt to use pytorch trained model 
+
 
 import streamlit as st
 from PIL import Image
